@@ -1,3 +1,134 @@
+.button {
+  transition: all 0.3s ease-out;
+}
 
+.promo_text, .logo_subtitle, .navigation_element {
+  font-family: "Arial", sans-serif;
+}
+
+.promo_title, .logo_title, .button {
+  font-family: "Georgia", sans-serif;
+}
+
+.button {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  padding: 15px 45px 15px 45px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.button_bordered {
+  background: #FAFAFA;
+  border: 2px solid #F1CDB3;
+}
+.button_bordered:hover {
+  background: #F1CDB3;
+}
+.button_colored {
+  background: #F1CDB3;
+  color: #292929;
+  border: none;
+}
+.button_colored:hover {
+  background: #FDDCC4;
+}
+
+body {
+  margin: 0;
+}
+
+.top_layout {
+  background-image: url("/assets/images/start-screen-gradient-background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.header_inner {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation_inner {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+}
+.navigation_element {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  letter-spacing: 0;
+  color: #CDCDCD;
+}
+
+.logo_title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  margin: 0;
+  padding-bottom: 10px;
+}
+.logo_subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.not-only {
+  display: flex;
+  flex-direction: row;
+  padding-top: 60px;
+}
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.promo_title {
+  margin: 0;
+  padding-top: 163px;
+  align-items: center;
+  width: 310px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+.promo_text {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  letter-spacing: 0;
+  color: #CDCDCD;
+  width: 460px;
+}
+.wrapper {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.margin {
+  margin: 0 40px 0;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,27 @@
+.button{
+  @extend %font-georgia;
+  @include font($size:17px, $height:130%, $letter-spacing: 0.06em);
+  padding: 15px 45px 15px 45px;
+  border-radius: 100px;
+  cursor: pointer;
+  @extend %transition;
+
+  &_bordered {
+    background: $color-light;
+    border: 2px solid $color-primary;
+    //align-items: center;
+
+    &:hover{
+      background: $color-primary;
+    }
+  }
+  &_colored{
+    background: $color-primary;
+    color: $color-button;
+    border: none;
+    &:hover{
+      background: $color-primary-light;
+
+    }
+  }
+}

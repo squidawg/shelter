@@ -1,0 +1,46 @@
+.top_layout{
+  background-image:  url("/assets/images/start-screen-gradient-background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.header_inner{
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation{
+  &_inner {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+  }
+  &_element{
+    @extend %font-arial;
+    @include font(15px, 160%,$letter-spacing: 0);
+    color: $color-background-text;
+
+  }
+}
+
+.logo{
+  &_title{
+    @extend %font-georgia;
+    @include font(32px, 110%,$letter-spacing: 0.06em);
+    color: $color-primary;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+  &_subtitle{
+    @extend %font-arial;
+    @include font(13px, 15px,$letter-spacing: 0.1em);
+    color: $color-background-h2;
+    margin: 0;
+
+  }
+}
+
