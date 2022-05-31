@@ -6,7 +6,7 @@
   font-family: "Arial", sans-serif;
 }
 
-.promo_title, .logo_title, .section_title, .button {
+.carousel_title, .promo_title, .logo_title, .section_title, .arrow_bordered__inactive, .arrow_bordered, .arrow, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -34,6 +34,71 @@
 }
 .button_colored:hover {
   background: #FDDCC4;
+}
+
+.arrow {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0;
+  padding: 23px 19px 23px 19px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  height: 52px;
+  width: 52px;
+}
+.arrow_bordered {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0;
+  display: flex;
+  justify-content: center;
+  padding: 23px 19px 23px 19px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s;
+  height: 52px;
+  width: 52px;
+  background: #FAFAFA;
+  border: 2px solid #F1CDB3;
+  align-items: center;
+}
+.arrow_bordered:hover {
+  background: #FDDCC4;
+  border: 2px solid #FDDCC4;
+}
+.arrow_bordered__inactive {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0;
+  display: flex;
+  justify-content: center;
+  padding: 23px 19px 23px 19px;
+  border-radius: 100px;
+  cursor: default;
+  transition: all 0.3s;
+  height: 52px;
+  width: 52px;
+  background: #FAFAFA;
+  border: 2px solid #CDCDCD;
+  align-items: center;
+}
+
+.prev {
+  margin-top: 191px;
+  margin-right: 53px;
+}
+
+.next {
+  margin-top: 191px;
+  margin-left: 53px;
 }
 
 body {
@@ -110,6 +175,7 @@ body {
 }
 
 .promo {
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -139,6 +205,7 @@ body {
 }
 .promo_image {
   height: 728px;
+  margin-right: 40px;
 }
 
 .about {
@@ -176,6 +243,47 @@ body {
 
 .section_container {
   width: 370px;
+}
+
+.our-friends_inner {
+  margin: 0 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.section_title-container {
+  width: 400px;
+  height: 90px;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+}
+.carousel_box {
+  display: flex;
+  flex-direction: row;
+}
+.carousel_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  height: 435px;
+}
+.carousel_title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  text-align: center;
+  margin: 0;
 }
 
 .wrapper {

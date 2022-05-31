@@ -6,6 +6,7 @@
 }
 
 .promo{
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -29,5 +30,6 @@
   }
   &_image{
     height: 728px;
+    margin-right: 40px;
   }
 }
