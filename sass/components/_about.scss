@@ -1,0 +1,35 @@
+.about{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 120px;
+  height: 588px;
+  padding-top: 80px;
+
+  &_pets{
+    height: 408px;
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+  }
+  &_inner{
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    height: 380px;
+    margin-top: 14px;
+  }
+  &_text{
+    margin: 0;
+    padding-top: 25px;
+    width: 430px;
+    @extend %font-arial;
+    @include font(15px, 24px);
+    color: $color-heading;
+
+  }
+}
+
+.section_container{
+  width: 370px;
+}

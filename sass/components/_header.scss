@@ -2,6 +2,7 @@
   background-image:  url("/assets/images/start-screen-gradient-background.png");
   background-position: center;
   background-size: cover;
+  height: 908px;
 }
 
 .header_inner{
@@ -17,11 +18,12 @@
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 35px;
   }
   &_element{
     @extend %font-arial;
-    @include font(15px, 160%,$letter-spacing: 0);
+    @include font(15px, 24px);
     color: $color-background-text;
 
   }
@@ -40,6 +42,7 @@
     @include font(13px, 15px,$letter-spacing: 0.1em);
     color: $color-background-h2;
     margin: 0;
+    text-align: center;
 
   }
 }

@@ -2,11 +2,11 @@
   transition: all 0.3s ease-out;
 }
 
-.promo_text, .logo_subtitle, .navigation_element {
+.about_text, .promo_text, .logo_subtitle, .navigation_element {
   font-family: "Arial", sans-serif;
 }
 
-.promo_title, .logo_title, .button {
+.promo_title, .logo_title, .section_title, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -40,10 +40,21 @@ body {
   margin: 0;
 }
 
+.section_title {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
 .top_layout {
   background-image: url("/assets/images/start-screen-gradient-background.png");
   background-position: center;
   background-size: cover;
+  height: 908px;
 }
 
 .header_inner {
@@ -58,13 +69,14 @@ body {
   list-style: none;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 35px;
 }
 .navigation_element {
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 160%;
+  line-height: 24px;
   letter-spacing: 0;
   color: #CDCDCD;
 }
@@ -87,18 +99,21 @@ body {
   letter-spacing: 0.1em;
   color: #FFFFFF;
   margin: 0;
+  text-align: center;
 }
 
 .not-only {
   display: flex;
   flex-direction: row;
   padding-top: 60px;
+  gap: 42px;
 }
 
 .promo {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  height: 322px;
 }
 .promo_title {
   margin: 0;
@@ -108,7 +123,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 44px;
-  line-height: 130%;
+  line-height: 57px;
   letter-spacing: 0;
   color: #FFFFFF;
 }
@@ -117,11 +132,52 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 160%;
+  line-height: 24px;
   letter-spacing: 0;
   color: #CDCDCD;
   width: 460px;
 }
+.promo_image {
+  height: 728px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 120px;
+  height: 588px;
+  padding-top: 80px;
+}
+.about_pets {
+  height: 408px;
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+}
+.about_inner {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  height: 380px;
+  margin-top: 14px;
+}
+.about_text {
+  margin: 0;
+  padding-top: 25px;
+  width: 430px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #545454;
+}
+
+.section_container {
+  width: 370px;
+}
+
 .wrapper {
   max-width: 1280px;
   margin: auto;
