@@ -213,8 +213,8 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 120px;
-  height: 588px;
-  padding-top: 80px;
+  margin-top: 80px;
+  margin-bottom: 100px;
 }
 .about_pets {
   height: 408px;
@@ -245,6 +245,11 @@ body {
   width: 370px;
 }
 
+.our_friends-bckgrnd {
+  background: #F6F6F6;
+  height: 877px;
+}
+
 .our-friends_inner {
   margin: 0 0 100px 0;
   display: flex;
@@ -257,6 +262,7 @@ body {
   width: 400px;
   height: 90px;
   text-align: center;
+  margin-top: 80px;
 }
 
 .carousel {

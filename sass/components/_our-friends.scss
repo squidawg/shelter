@@ -1,3 +1,8 @@
+.our_friends-bckgrnd{
+  background: $color-background-pets;
+  height: 877px;
+}
+
 .our-friends_inner{
   margin: 0 0 100px 0;
   display: flex;
@@ -12,6 +17,7 @@
     width: 400px;
     height: 90px;
     text-align: center;
+    margin-top: 80px;
   }
 }
 
