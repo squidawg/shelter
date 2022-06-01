@@ -449,7 +449,7 @@ template {
   display: none;
 }
 
-.button {
+.arrow, .arrow_bordered__inactive, .arrow_bordered, .button {
   transition: all 0.3s ease-out;
 }
 
@@ -457,13 +457,14 @@ template {
   font-family: "Arial", sans-serif;
 }
 
-.contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .carousel_title, .promo_title, .logo_title, .section_title, .section_name, .arrow_bordered__inactive, .arrow_bordered, .arrow, .button {
+.contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .carousel_title, .promo_title, .logo_title, .section_title, .section_name, .arrow, .arrow_bordered__inactive, .arrow_bordered, .button {
   font-family: "Georgia", sans-serif;
 }
 
 .ico {
   width: 60px;
   height: 60px;
+  display: inline-flex;
 }
 .ico_arrow-prev, .ico_arrow-next {
   width: 14px;
@@ -476,39 +477,30 @@ template {
 }
 .ico_food {
   background-image: url("../assets/icons/icon-pet-food.svg");
-  display: inline-flex;
 }
 .ico_transport {
   background-image: url("../assets/icons/icon-transportation.svg");
-  display: inline-flex;
 }
 .ico_toys {
   background-image: url("../assets/icons/icon-toys.svg");
-  display: inline-flex;
 }
 .ico_bowl {
   background-image: url("../assets/icons/icon-bowls-and-cups.svg");
-  display: inline-flex;
 }
 .ico_shampoo {
   background-image: url("../assets/icons/icon-shampoos.svg");
-  display: inline-flex;
 }
 .ico_vitamin {
   background-image: url("../assets/icons/icon-vitamins.svg");
-  display: inline-flex;
 }
 .ico_medicine {
   background-image: url("../assets/icons/icon-medicines.svg");
-  display: inline-flex;
 }
 .ico_collar {
   background-image: url("../assets/icons/icon-collars-leashes.svg");
-  display: inline-flex;
 }
 .ico_area {
   background-image: url("../assets/icons/icon-sleeping-area.svg");
-  display: inline-flex;
 }
 
 .card_icon {
@@ -543,7 +535,7 @@ template {
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
-  line-height: 130%;
+  line-height: 22.1px;
   letter-spacing: 0.06em;
   padding: 15px 45px 15px 45px;
   border-radius: 100px;
@@ -565,34 +557,22 @@ template {
   background: #FDDCC4;
 }
 
-.arrow {
+.arrow, .arrow_bordered__inactive, .arrow_bordered {
   font-style: normal;
   font-weight: 400;
-  font-size: 1.7rem;
-  line-height: 130%;
+  font-size: 17px;
+  line-height: 22.1px;
   letter-spacing: 0;
   padding: 23px 19px 23px 19px;
   border-radius: 100px;
   cursor: pointer;
-  transition: all 0.3s;
   display: flex;
   height: 52px;
   width: 52px;
 }
 .arrow_bordered {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.7rem;
-  line-height: 130%;
-  letter-spacing: 0;
-  display: flex;
   justify-content: center;
-  padding: 23px 19px 23px 19px;
-  border-radius: 100px;
   cursor: pointer;
-  transition: all 0.3s;
-  height: 52px;
-  width: 52px;
   background: #FAFAFA;
   border: 2px solid #F1CDB3;
   align-items: center;
@@ -602,20 +582,7 @@ template {
   border: 2px solid #FDDCC4;
 }
 .arrow_bordered__inactive {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.7rem;
-  line-height: 130%;
-  letter-spacing: 0;
-  display: flex;
-  justify-content: center;
-  padding: 23px 19px 23px 19px;
-  border-radius: 100px;
   cursor: default;
-  transition: all 0.3s;
-  height: 52px;
-  width: 52px;
-  background: #FAFAFA;
   border: 2px solid #CDCDCD;
   align-items: center;
 }
