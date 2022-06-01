@@ -1,0 +1,51 @@
+.bottom_layout{
+  background-image:  url("/assets/images/footer-gradient-background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 160px;
+  padding-top: 40px;
+  &_inner{
+    @extend .footer;
+    padding-top: 16px;
+  }
+  &_layout{
+    height: 310px;
+  }
+}
+
+.section_name{
+  @extend .section_title;
+  color: $color-background-h2;
+  max-width: 280px;
+}
+
+.contacts{
+  display: flex;
+  flex-direction: column;
+  &_inner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  &_subtitle{
+    @extend %font-georgia;
+    @include font(20px, 23px,$letter-spacing: 0.06em);
+    color: $color-primary;
+    max-width: 260px;
+    margin: 0;;
+  }
+}
+
+.left{
+  gap: 40px;
+}
+.right{
+  gap: 32px;
+}

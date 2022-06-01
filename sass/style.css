@@ -457,7 +457,7 @@ template {
   font-family: "Arial", sans-serif;
 }
 
-.card_number, .donation_subtitle, .grid_title, .carousel_title, .promo_title, .logo_title, .section_title, .arrow_bordered__inactive, .arrow_bordered, .arrow, .button {
+.contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .carousel_title, .promo_title, .logo_title, .section_title, .section_name, .arrow_bordered__inactive, .arrow_bordered, .arrow, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -506,6 +506,27 @@ template {
   width: 30px;
   height: 23px;
   background-image: url("../assets/icons/credit-card.svg");
+  display: inline-flex;
+}
+
+.mail {
+  width: 40px;
+  height: 32px;
+  background-image: url("../assets/icons/icon-email.svg");
+  display: inline-flex;
+}
+
+.phone {
+  width: 40px;
+  height: 32px;
+  background-image: url("../assets/icons/icon-phone.svg");
+  display: inline-flex;
+}
+
+.pin {
+  width: 22px;
+  height: 32px;
+  background-image: url("../assets/icons/icon-marker.svg");
   display: inline-flex;
 }
 
@@ -612,7 +633,7 @@ body {
   margin: 0;
 }
 
-.section_title {
+.section_title, .section_name {
   margin: 0;
   font-style: normal;
   font-weight: 400;
@@ -854,6 +875,7 @@ body {
 .donation {
   padding-top: 80px;
   padding-bottom: 100px;
+  height: 282px;
 }
 .donation_inner {
   display: flex;
@@ -910,6 +932,60 @@ body {
   letter-spacing: 0.06em;
   color: #545454;
   margin: 0;
+}
+
+.bottom_layout {
+  background-image: url("/assets/images/footer-gradient-background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.footer, .footer_inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 160px;
+  padding-top: 40px;
+}
+.footer_inner {
+  padding-top: 16px;
+}
+.footer_layout {
+  height: 310px;
+}
+
+.section_name {
+  color: #FFFFFF;
+  max-width: 280px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+.contacts_inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.contacts_subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  max-width: 260px;
+  margin: 0;
+}
+
+.left {
+  gap: 40px;
+}
+
+.right {
+  gap: 32px;
 }
 
 .wrapper {
