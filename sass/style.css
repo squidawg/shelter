@@ -453,11 +453,11 @@ template {
   transition: all 0.3s ease-out;
 }
 
-.about_text, .promo_text, .logo_subtitle, .navigation_element {
+.donation_text, .about_text, .promo_text, .logo_subtitle, .navigation_element {
   font-family: "Arial", sans-serif;
 }
 
-.grid_title, .carousel_title, .promo_title, .logo_title, .section_title, .arrow_bordered__inactive, .arrow_bordered, .arrow, .button {
+.card_number, .donation_subtitle, .grid_title, .carousel_title, .promo_title, .logo_title, .section_title, .arrow_bordered__inactive, .arrow_bordered, .arrow, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -499,6 +499,13 @@ template {
 }
 .ico_area {
   background-image: url("../assets/icons/icon-sleeping-area.svg");
+  display: inline-flex;
+}
+
+.card_icon {
+  width: 30px;
+  height: 23px;
+  background-image: url("../assets/icons/credit-card.svg");
   display: inline-flex;
 }
 
@@ -595,6 +602,10 @@ template {
 
 .align {
   text-align: center;
+}
+
+.width {
+  width: 300px;
 }
 
 body {
@@ -835,6 +846,67 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 22px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin: 0;
+}
+
+.donation {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+.donation_inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+.donation_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+  border-radius: 9px;
+  background: #F1CDB3;
+  width: 320px;
+}
+.donation_subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16.5px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin: 0;
+}
+.donation_text {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #B2B2B2;
+  display: flex;
+  align-items: center;
+  width: 380px;
+  margin: 0;
+}
+.donation_promo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.donation_image {
+  padding-top: 11px;
+  padding-bottom: 10px;
+}
+
+.card_number {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
   letter-spacing: 0.06em;
   color: #545454;
   margin: 0;

@@ -1,0 +1,58 @@
+.donation{
+  padding-top: 80px;
+  padding-bottom: 100px;
+  &_inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &_card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    border-radius: 9px;
+    background: $color-primary;
+    width: 320px;
+
+  }
+
+  &_subtitle{
+    @extend %font-georgia;
+    @include font(15px, 16.5px, $letter-spacing: 0.06em);
+    color: $color-heading;
+    margin: 0;
+  }
+
+  &_text{
+    @extend %font-arial;
+    @include font(12px, 18px, $style: italic);
+    color: $color-background-text-card;
+    display: flex;
+    align-items: center;
+    width: 380px;
+    margin: 0;
+  }
+
+  &_promo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &_image{
+    padding-top: 11px;
+    padding-bottom: 10px;
+  }
+}
+
+
+.card_number{
+  @extend %font-georgia;
+  @include font(20px, 23px, $letter-spacing: 0.06em);
+  color: $color-heading;
+  margin: 0;
+}
