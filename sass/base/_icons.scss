@@ -1,0 +1,45 @@
+.ico{
+  width: 60px;
+  height: 60px;
+
+  &_food{
+    background-image: url("../assets/icons/icon-pet-food.svg");
+    display: inline-flex;
+  }
+
+  &_transport{
+    background-image: url("../assets/icons/icon-transportation.svg");
+    display: inline-flex;
+  }
+
+  &_toys{
+    background-image: url("../assets/icons/icon-toys.svg");
+    display: inline-flex;
+  }
+
+  &_bowl{
+    background-image: url("../assets/icons/icon-bowls-and-cups.svg");
+    display: inline-flex;
+  }
+  &_shampoo{
+    background-image: url("../assets/icons/icon-shampoos.svg");
+    display: inline-flex;
+  }
+  &_vitamin{
+    background-image: url("../assets/icons/icon-vitamins.svg");
+    display: inline-flex;
+  }
+  &_medicine{
+    background-image: url("../assets/icons/icon-medicines.svg");
+    display: inline-flex;
+  }
+  &_collar{
+    background-image: url("../assets/icons/icon-collars-leashes.svg");
+    display: inline-flex;
+  }
+  &_area{
+    background-image: url("../assets/icons/icon-sleeping-area.svg");
+    display: inline-flex;
+  }
+}
+

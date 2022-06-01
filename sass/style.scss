@@ -1,16 +1,24 @@
 
 
+@import "../node_modules/normalize-scss/sass/normalize";
+@include normalize();
+
 
 @import "abstract/constants";
 @import "abstract/mixins";
 @import "abstract/placeholders";
 
 
+@import "base/icons";
 @import "base/buttons";
 @import "base/base";
+
 
 @import "components/header";
 @import "components/not-only";
 @import "components/about";
 @import "components/our-friends";
+@import "components/help";
+
+
 @import "layout/wrapper";
