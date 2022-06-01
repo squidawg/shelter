@@ -2,6 +2,20 @@
   width: 60px;
   height: 60px;
 
+  &_arrow-prev{
+    width: 14px;
+    height: 6px;
+    background-image: url("../assets/icons/Arrow.svg");
+    display: inline-flex;
+  }
+
+  &_arrow-next{
+    @extend .ico_arrow-prev;
+    transform: rotate(180deg);
+
+
+  }
+
   &_food{
     background-image: url("../assets/icons/icon-pet-food.svg");
     display: inline-flex;
@@ -42,6 +56,8 @@
     display: inline-flex;
   }
 }
+
+
 
 .card_icon{
   width: 30px;

@@ -2,6 +2,10 @@
   padding-top: 80px;
   padding-bottom: 100px;
   height: 282px;
+
+  &_layout{
+    background: $color-background-pets;
+  }
   &_inner{
     display: flex;
     flex-direction: row;
@@ -13,12 +17,18 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
     padding: 10px 15px;
     border-radius: 9px;
     background: $color-primary;
     width: 320px;
 
+
+  }
+  &_link{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    text-decoration: none;
   }
 
   &_subtitle{

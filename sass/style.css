@@ -453,7 +453,7 @@ template {
   transition: all 0.3s ease-out;
 }
 
-.donation_text, .about_text, .promo_text, .logo_subtitle, .navigation_element {
+.donation_text, .about_text, .promo_text, .logo_subtitle, .navigation_link, .navigation_link-active {
   font-family: "Arial", sans-serif;
 }
 
@@ -464,6 +464,15 @@ template {
 .ico {
   width: 60px;
   height: 60px;
+}
+.ico_arrow-prev, .ico_arrow-next {
+  width: 14px;
+  height: 6px;
+  background-image: url("../assets/icons/Arrow.svg");
+  display: inline-flex;
+}
+.ico_arrow-next {
+  transform: rotate(180deg);
 }
 .ico_food {
   background-image: url("../assets/icons/icon-pet-food.svg");
@@ -665,13 +674,25 @@ body {
   justify-content: center;
   gap: 35px;
 }
-.navigation_element {
+.navigation_link, .navigation_link-active {
+  text-decoration: none;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
   letter-spacing: 0;
   color: #CDCDCD;
+}
+.navigation_link:hover, .navigation_link-active:hover {
+  color: #FAFAFA;
+}
+.navigation_link-active {
+  color: #FAFAFA;
+}
+
+.active {
+  border-bottom: 3px solid;
+  color: #F1CDB3;
 }
 
 .logo_title {
@@ -693,6 +714,9 @@ body {
   color: #FFFFFF;
   margin: 0;
   text-align: center;
+}
+.logo_link {
+  text-decoration: none;
 }
 
 .not-only {
@@ -808,6 +832,8 @@ body {
   align-items: center;
   gap: 30px;
   height: 435px;
+  background: #FFFFFF;
+  border-radius: 9px;
 }
 .carousel_title {
   font-style: normal;
@@ -877,6 +903,9 @@ body {
   padding-bottom: 100px;
   height: 282px;
 }
+.donation_layout {
+  background: #F6F6F6;
+}
 .donation_inner {
   display: flex;
   flex-direction: row;
@@ -887,11 +916,16 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15px;
   padding: 10px 15px;
   border-radius: 9px;
   background: #F1CDB3;
   width: 320px;
+}
+.donation_link {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  text-decoration: none;
 }
 .donation_subtitle {
   font-style: normal;
@@ -963,11 +997,14 @@ body {
   display: flex;
   flex-direction: column;
 }
-.contacts_inner {
+.contacts_inner, .contacts_link {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
+}
+.contacts_link {
+  text-decoration: none;
 }
 .contacts_subtitle {
   font-style: normal;

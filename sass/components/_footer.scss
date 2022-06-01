@@ -34,6 +34,10 @@
     align-items: center;
     gap: 20px;
   }
+  &_link{
+    @extend .contacts_inner;
+    text-decoration: none;
+  }
   &_subtitle{
     @extend %font-georgia;
     @include font(20px, 23px,$letter-spacing: 0.06em);

@@ -35,6 +35,8 @@
     align-items: center;
     gap: 30px;
     height: 435px;
+    background: $color-background-h2;
+    border-radius: 9px;
   }
   &_title{
     @extend %font-georgia;
