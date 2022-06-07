@@ -50,15 +50,21 @@
       border: 2px solid $color-primary-light;
     }
 
+    &_inactive {
+      @extend .arrow;
+      justify-content: center;
+      cursor: default;
+      background: $color-light;
+      border: 2px solid $color-background-text;
+      align-items: center;
+      color: $color-background-text;
+
+    }
+
 
   }
 
-  &_bordered__inactive {
-    @extend .arrow;
-    cursor: default;
-    border: 2px solid $color-background-text;
-    align-items: center;
-  }
+
 }
 
 .prev{

@@ -449,7 +449,7 @@ template {
   display: none;
 }
 
-.arrow, .arrow_bordered__inactive, .arrow_bordered, .button {
+.arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
   transition: all 0.3s ease-out;
 }
 
@@ -457,7 +457,7 @@ template {
   font-family: "Arial", sans-serif;
 }
 
-.contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .pagination_item, .carousel_title, .promo_title, .logo_title, .section_title, .section_name, .arrow, .arrow_bordered__inactive, .arrow_bordered, .button {
+.contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .pagination_item, .carousel_title, .promo_title, .logo_title, .section_title, .section_name, .arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -557,7 +557,7 @@ template {
   background: #FDDCC4;
 }
 
-.arrow, .arrow_bordered__inactive, .arrow_bordered {
+.arrow, .arrow_bordered_inactive, .arrow_bordered {
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -581,10 +581,13 @@ template {
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
 }
-.arrow_bordered__inactive {
+.arrow_bordered_inactive {
+  justify-content: center;
   cursor: default;
+  background: #FAFAFA;
   border: 2px solid #CDCDCD;
   align-items: center;
+  color: #CDCDCD;
 }
 
 .prev {
