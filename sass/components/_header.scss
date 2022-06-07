@@ -6,7 +6,7 @@
 }
 
 .top_layout{
-  background-image:  url("/assets/images/start-screen-gradient-background.png");
+  background-image:  url("/assets/images/start-screen-gradient-background.jpeg");
   background-position: center;
   background-size: cover;
   height: 908px;
@@ -40,6 +40,7 @@
       @extend .navigation_link;
       color: $color-light;
     }
+
 
   }
 }
