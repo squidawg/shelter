@@ -33,3 +33,9 @@
 .section_container{
   width: 370px;
 }
+
+.pets_inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

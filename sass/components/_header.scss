@@ -1,3 +1,10 @@
+.header_pets{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: $color-background-h2;
+}
+
 .top_layout{
   background-image:  url("/assets/images/start-screen-gradient-background.png");
   background-position: center;
@@ -64,3 +71,9 @@
   }
 }
 
+.pets_subtitle{
+  color: $color-button;
+}
+.pets_title{
+  color: $color-heading;
+}

@@ -1,3 +1,7 @@
+.our-friends{
+  background: $color-background-pets;
+}
+
 .our_friends-bckgrnd{
   background: $color-background-pets;
   height: 877px;
@@ -35,7 +39,7 @@
     align-items: center;
     gap: 30px;
     height: 435px;
-    background: $color-background-h2;
+    background: $color-light;
     border-radius: 9px;
   }
   &_title{
@@ -46,4 +50,34 @@
     margin: 0;
 
   }
+
+  &_pets{
+    display: flex;
+    flex-wrap: wrap;
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+    justify-content: center;
+    margin-top: 60px;
+  }
+}
+
+
+
+//pets
+.pagination{
+  display: flex;
+  flex-direction: row;
+  margin: 60px 0 100px 0;
+  gap: 20px;
+  &_item{
+    @extend %font-georgia;
+    @include font(20px, 23px,$letter-spacing: 0.06em);
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.margin_pets{
+  padding-bottom: 30px;
+  padding-top: 30px;
 }

@@ -457,7 +457,7 @@ template {
   font-family: "Arial", sans-serif;
 }
 
-.contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .carousel_title, .promo_title, .logo_title, .section_title, .section_name, .arrow, .arrow_bordered__inactive, .arrow_bordered, .button {
+.contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .pagination_item, .carousel_title, .promo_title, .logo_title, .section_title, .section_name, .arrow, .arrow_bordered__inactive, .arrow_bordered, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -619,6 +619,13 @@ body {
   color: #545454;
 }
 
+.header_pets {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #FFFFFF;
+}
+
 .top_layout {
   background-image: url("/assets/images/start-screen-gradient-background.png");
   background-position: center;
@@ -684,6 +691,14 @@ body {
 }
 .logo_link {
   text-decoration: none;
+}
+
+.pets_subtitle {
+  color: #292929;
+}
+
+.pets_title {
+  color: #545454;
 }
 
 .not-only {
@@ -764,6 +779,16 @@ body {
   width: 370px;
 }
 
+.pets_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-friends {
+  background: #F6F6F6;
+}
+
 .our_friends-bckgrnd {
   background: #F6F6F6;
   height: 877px;
@@ -799,7 +824,7 @@ body {
   align-items: center;
   gap: 30px;
   height: 435px;
-  background: #FFFFFF;
+  background: #FAFAFA;
   border-radius: 9px;
 }
 .carousel_title {
@@ -811,6 +836,35 @@ body {
   color: #545454;
   text-align: center;
   margin: 0;
+}
+.carousel_pets {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column-gap: 40px;
+  grid-row-gap: 30px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  margin: 60px 0 100px 0;
+  gap: 20px;
+}
+.pagination_item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  align-items: center;
+}
+
+.margin_pets {
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .help {
