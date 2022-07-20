@@ -10,6 +10,9 @@
   background-position: center;
   background-size: cover;
   height: 908px;
+  @include media-tablet{
+    height: 1165px;
+  }
 }
 
 .header_inner{
@@ -17,6 +20,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @include media-tablet{
+    padding-top: 30px;
+  }
 }
 
 .navigation{
@@ -77,4 +83,9 @@
 }
 .pets_title{
   color: $color-heading;
+  &:hover{
+    color: $color-button;
+
+  }
 }
+

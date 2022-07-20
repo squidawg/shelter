@@ -5,4 +5,7 @@
 
 .margin{
   margin: 0 40px 0;
+  @include media-tablet{
+    margin: 0 30px 0;
+  }
 }

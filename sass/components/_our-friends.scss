@@ -29,9 +29,16 @@
   display: flex;
   flex-direction: row;
   gap: 90px;
+  @include media-tablet{
+    gap: 40px;
+  }
   &_box {
     display: flex;
     flex-direction: row;
+    gap: 53px;
+    @include media-tablet{
+      gap: 12px;
+    }
   }
   &_card{
     display: flex;
@@ -41,6 +48,11 @@
     height: 435px;
     background: $color-light;
     border-radius: 9px;
+    &:last-child{
+      @include media-tablet{
+        display: none;
+      }
+    }
   }
   &_title{
     @extend %font-georgia;

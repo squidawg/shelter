@@ -16,6 +16,7 @@
         <option value="CSS File" />
         <option value="SCSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -121,6 +122,25 @@
       <workItem from="1654615360031" duration="2526000" />
       <workItem from="1654621924049" duration="441000" />
       <workItem from="1654622518275" duration="2014000" />
+      <workItem from="1654669115292" duration="681000" />
+      <workItem from="1654670386877" duration="630000" />
+      <workItem from="1655204300289" duration="52000" />
+      <workItem from="1655206425092" duration="20000" />
+      <workItem from="1655209129889" duration="6000" />
+      <workItem from="1655225696418" duration="25000" />
+      <workItem from="1655367944446" duration="44000" />
+      <workItem from="1655368159455" duration="28000" />
+      <workItem from="1655368651877" duration="244000" />
+      <workItem from="1655373037034" duration="39000" />
+      <workItem from="1658314262782" duration="649000" />
+      <workItem from="1658319843438" duration="65000" />
+      <workItem from="1658321505172" duration="82000" />
+      <workItem from="1658321598907" duration="43000" />
+      <workItem from="1658321697039" duration="28000" />
+      <workItem from="1658321803540" duration="545000" />
+      <workItem from="1658322768091" duration="653000" />
+      <workItem from="1658323446990" duration="242000" />
+      <workItem from="1658324033573" duration="9034000" />
     </task>
     <servers />
   </component>

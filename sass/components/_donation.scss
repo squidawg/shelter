@@ -2,6 +2,11 @@
   padding-top: 80px;
   padding-bottom: 100px;
   height: 282px;
+  @include media-tablet{
+    height: 603px;
+    display: flex;
+    justify-content: center;
+  }
 
   &_layout{
     background: $color-background-pets;
@@ -11,6 +16,10 @@
     flex-direction: row;
     justify-content: center;
     gap: 30px;
+    @include media-tablet{
+      flex-direction: column-reverse;
+      gap: 60px;
+    }
   }
 
   &_card{
@@ -52,11 +61,17 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @include media-tablet{
+      margin-left: 62.5px;
+    }
   }
 
   &_image{
     padding-top: 11px;
     padding-bottom: 10px;
+    @include media-tablet{
+      padding: 0;
+    }
   }
 }
 

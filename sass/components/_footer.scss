@@ -10,12 +10,26 @@
   justify-content: center;
   gap: 160px;
   padding-top: 40px;
+  @include media-tablet{
+    padding-top: 30px;
+    flex-direction: column;
+    gap: 65px 60px;
+  }
   &_inner{
     @extend .footer;
     padding-top: 16px;
+    @include media-tablet{
+      display: flex;
+      flex-direction: row;
+      padding-top: 0;
+    }
   }
   &_layout{
     height: 310px;
+    @include media-tablet{
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 

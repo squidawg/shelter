@@ -3,6 +3,10 @@
   flex-direction: row;
   padding-top: 60px;
   gap: 42px;
+  @include media-tablet{
+    flex-direction: column;
+    gap: 100px;
+  }
 }
 
 .promo{
@@ -11,6 +15,10 @@
   flex-direction: column;
   gap: 40px;
   height: 322px;
+  @include media-tablet{
+    align-items: center;
+    margin-left: 0;
+  }
   &_title{
     margin: 0;
     padding-top: 163px;
@@ -19,6 +27,10 @@
     @extend %font-georgia;
     @include font(44px, 57px);
     color: $color-background-h2;
+    @include media-tablet{
+      padding-top: 0;
+      margin-left: -150px;
+    }
   }
   &_text{
     margin: 0;
@@ -31,5 +43,23 @@
   &_image{
     height: 728px;
     margin-right: 40px;
+    @include media-tablet{
+      width: 569px;
+      height: 593px;
+      margin-right: 0;
+      margin-left: 169px;
+    }
+  }
+  &_dog {
+    @include media-tablet {
+      width: 569px;
+      height: 593px;
+    }
+
+  }
+  &__button{
+    @include media-tablet{
+
+    }
   }
 }
