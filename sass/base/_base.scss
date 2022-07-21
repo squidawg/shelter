@@ -3,6 +3,9 @@
 }
 .width{
   width: 300px;
+  @include media-mobile{
+    width: 220px;
+  }
 }
 body{
   margin: 0;
@@ -13,6 +16,11 @@ body{
   @extend %font-georgia;
   @include font(35px, 45.5px, $letter-spacing: 0.06em);
   color: $color-heading;
+  @include media-mobile{
+    @include font(25px, 32.5px, $letter-spacing: 0.06em);
+    text-align: center;
+
+  }
 
 }
 

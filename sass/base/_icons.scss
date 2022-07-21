@@ -2,6 +2,9 @@
   width: 60px;
   height: 60px;
   display: inline-flex;
+  @include media-mobile{
+    transform: scale(0.8);
+  }
 
   &_arrow-prev{
     width: 14px;

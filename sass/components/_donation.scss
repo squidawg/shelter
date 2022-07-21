@@ -7,6 +7,11 @@
     display: flex;
     justify-content: center;
   }
+  @include media-mobile{
+    padding-top: 42px;
+    padding-bottom: 42px;
+    height: 458px;
+  }
 
   &_layout{
     background: $color-background-pets;
@@ -20,6 +25,10 @@
       flex-direction: column-reverse;
       gap: 60px;
     }
+    @include media-mobile{
+      gap: 0;
+      justify-content: space-between;
+    }
   }
 
   &_card{
@@ -30,6 +39,10 @@
     border-radius: 9px;
     background: $color-primary;
     width: 320px;
+    @include media-mobile{
+      width: 251px;
+      height: 23px;
+    }
 
 
   }
@@ -38,6 +51,9 @@
     flex-direction: row;
     gap: 15px;
     text-decoration: none;
+    @include media-mobile{
+      align-items: center;
+    }
   }
 
   &_subtitle{
@@ -45,6 +61,11 @@
     @include font(15px, 16.5px, $letter-spacing: 0.06em);
     color: $color-heading;
     margin: 0;
+    @include media-mobile{
+      text-align: center;
+      width: 273px;
+      letter-spacing: 0;
+    }
   }
 
   &_text{
@@ -55,6 +76,11 @@
     align-items: center;
     width: 380px;
     margin: 0;
+    @include media-mobile{
+      width: 280px;
+      text-align: justify;
+
+    }
   }
 
   &_promo{
@@ -64,6 +90,12 @@
     @include media-tablet{
       margin-left: 62.5px;
     }
+    @include media-mobile{
+      margin-left: 0;
+      width: 300px;
+      align-items: center;
+      gap: 23px;
+    }
   }
 
   &_image{
@@ -71,6 +103,15 @@
     padding-bottom: 10px;
     @include media-tablet{
       padding: 0;
+    }
+    @include media-mobile{
+      margin-left: 20px;
+    }
+  }
+  &_dog{
+    @include media-mobile{
+      width: 260px;
+      height: 135.2px;
     }
   }
 }
@@ -81,4 +122,8 @@
   @include font(20px, 23px, $letter-spacing: 0.06em);
   color: $color-heading;
   margin: 0;
+  @include media-mobile{
+    @include font(15px, 16.5px, $letter-spacing: 0.06em);
+    width: 220px;
+  }
 }

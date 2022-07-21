@@ -5,6 +5,10 @@
   gap: 120px;
   margin-top: 80px;
   margin-bottom: 100px;
+  @include media-mobile{
+    margin-top: 42px;
+    margin-bottom: 42.4px;
+  }
 
   &_pets{
     height: 408px;
@@ -17,6 +21,10 @@
       justify-content: flex-end;
       gap: 80px;
     }
+    @include media-mobile{
+      height: 890px;
+      gap: 42px;
+    }
   }
   &_inner{
     display: flex;
@@ -27,6 +35,12 @@
     @include media-tablet{
       margin-top: 0;
     }
+    @include media-mobile{
+      width: 300px;
+      height: auto;
+      align-items: center;
+      text-align: justify;
+    }
   }
   &_text{
     margin: 0;
@@ -35,6 +49,10 @@
     @extend %font-arial;
     @include font(15px, 24px);
     color: $color-heading;
+    @include media-mobile{
+      width: 270px;
+      padding-top: 22px;
+    }
 
   }
   &_image{
@@ -43,11 +61,20 @@
       height: 408px;
       margin-left: 65px;
     }
+    @include media-mobile{
+      margin-left: 20px;
+      width: 260px;
+      height: 353.6px;
+
+    }
   }
 }
 
 .section_container{
   width: 370px;
+  @include media-mobile{
+    width: 280px;
+  }
 }
 
 .pets_inner{

@@ -5,6 +5,9 @@
 .our_friends-bckgrnd{
   background: $color-background-pets;
   height: 877px;
+  @include media-mobile{
+    height: 791px;
+  }
 }
 
 .our-friends_inner{
@@ -13,6 +16,10 @@
   flex-direction: column;
   align-items: center;
   gap: 60px;
+  @include media-mobile{
+    margin: 0 0 42px 0;
+    gap: 15px;
+  }
 }
 
 .section_title{
@@ -22,6 +29,9 @@
     height: 90px;
     text-align: center;
     margin-top: 80px;
+    @include media-mobile{
+      margin-top: 42px;
+    }
   }
 }
 
@@ -38,6 +48,10 @@
     gap: 53px;
     @include media-tablet{
       gap: 12px;
+
+    }
+    @include media-mobile{
+      margin-bottom: 31.5%;
     }
   }
   &_card{
@@ -50,6 +64,11 @@
     border-radius: 9px;
     &:last-child{
       @include media-tablet{
+        display: none;
+      }
+    }
+    &:nth-child(2){
+      @include media-mobile{
         display: none;
       }
     }

@@ -7,6 +7,9 @@
     flex-direction: column;
     gap: 100px;
   }
+  @include media-mobile{
+    gap: 105px;
+  }
 }
 
 .promo{
@@ -19,6 +22,10 @@
     align-items: center;
     margin-left: 0;
   }
+  @include media-mobile{
+    gap: 42px;
+    height: 296px;
+  }
   &_title{
     margin: 0;
     padding-top: 163px;
@@ -30,6 +37,12 @@
     @include media-tablet{
       padding-top: 0;
       margin-left: -150px;
+      width: 260px;
+      text-align: center;
+    }
+    @include media-mobile{
+      @include font(25px, 32.5px, $letter-spacing: 0.06em);
+      margin-left: 0;
     }
   }
   &_text{
@@ -38,6 +51,10 @@
     @include font(15px, 24px);
     color: $color-background-text;
     width: 460px;
+    @include media-mobile{
+      width: 300px;
+      text-align: center;
+    }
 
   }
   &_image{
@@ -49,11 +66,20 @@
       margin-right: 0;
       margin-left: 169px;
     }
+    @include media-mobile{
+      width: 260px;
+      height: 271.77px;
+      margin-left: 50px;
+    }
   }
   &_dog {
     @include media-tablet {
       width: 569px;
       height: 593px;
+    }
+    @include media-mobile{
+      width: 260px;
+      height: 271.77px;
     }
 
   }

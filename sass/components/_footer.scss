@@ -15,6 +15,9 @@
     flex-direction: column;
     gap: 65px 60px;
   }
+  @include media-mobile{
+    gap: 40px;
+  }
   &_inner{
     @extend .footer;
     padding-top: 16px;
@@ -22,6 +25,12 @@
       display: flex;
       flex-direction: row;
       padding-top: 0;
+      align-items: center;
+    }
+    @include media-mobile{
+      flex-direction: column;
+      gap: 40px;
+      justify-content: center;
     }
   }
   &_layout{
@@ -29,6 +38,17 @@
     @include media-tablet{
       display: flex;
       justify-content: center;
+    }
+    @include media-mobile{
+      width: 260px;
+      height: 269px;
+      margin: auto;
+    }
+  }
+  &_image{
+    @include media-mobile{
+      width: 260px;
+      height: 269px;
     }
   }
 }
@@ -47,10 +67,14 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    @include media-mobile{
+      justify-content: center;
+    }
   }
   &_link{
     @extend .contacts_inner;
     text-decoration: none;
+
   }
   &_subtitle{
     @extend %font-georgia;
@@ -66,4 +90,9 @@
 }
 .right{
   gap: 32px;
+  @include media-mobile{
+    gap: 40px;
+    margin-left: 20px;
+
+  }
 }
