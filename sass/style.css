@@ -676,7 +676,6 @@ body {
 }
 @media (max-width: 766px) {
   .top_layout {
-    width: 320px;
     height: 823px;
   }
 }
@@ -784,6 +783,16 @@ body {
   height: 22px;
   margin-top: 19px;
 }
+@media (max-width: 3000px) {
+  .hamburger {
+    display: none;
+  }
+}
+@media (max-width: 766px) {
+  .hamburger {
+    display: flex;
+  }
+}
 .hamburger:before {
   top: 0;
   left: 0;
@@ -808,6 +817,7 @@ body {
 @media (max-width: 766px) {
   .not-only {
     gap: 105px;
+    align-items: center;
   }
 }
 
