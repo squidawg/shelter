@@ -105,14 +105,25 @@
   color: $color-primary;
   background-color: $color-primary;
   width: 100%;
+  &-pets {
+    @extend %hamburger-line;
+    color: $color-heading__modal;
+  }
 }
+
 
 .hamburger__line {
   @extend %hamburger-line;
   top: calc(50% - 1px);
   left: 0;
+  &-pets{
+    @extend .hamburger__line;
+    @extend %hamburger-line-pets;
+  }
 
 }
+
+
 
 .hamburger{
     display: flex;
@@ -123,9 +134,9 @@
     @include media-over__laptop{
       display: none;
     }
-  @include media-mobile{
-    display: flex;
-  }
+    @include media-mobile{
+      display: flex;
+    }
     &:before{
       @extend %hamburger-line;
       top: 0;
@@ -136,9 +147,19 @@
       bottom: 0;
       left: 0;
     }
-
-
-
+  &-pets{
+    @extend .hamburger;
+    &:before{
+      @extend %hamburger-line-pets;
+      top: 0;
+      left: 0;
+    }
+    &:after{
+      @extend %hamburger-line-pets;
+      bottom: 0;
+      left: 0;
+    }
   }
+}
 
 

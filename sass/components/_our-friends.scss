@@ -106,9 +106,29 @@
     text-align: center;
     align-items: center;
   }
+  @include media-mobile{
+    gap: 10px;
+  }
 }
 
 .margin_pets{
   padding-bottom: 30px;
   padding-top: 30px;
+}
+
+.hide_card{
+  &:nth-child(7){
+    @include media-tablet{
+      display: none;
+    }
+  }
+  @include media-mobile{
+    display: none;
+  }
+}
+
+.card_flex{
+  &:nth-child(2){
+    display: flex;
+  }
 }
