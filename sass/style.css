@@ -634,6 +634,7 @@ template {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .section_title, .section_name {
@@ -654,6 +655,48 @@ body {
     letter-spacing: 0.06em;
     text-align: center;
   }
+}
+
+.left_cards, .right_cards, .active_cards {
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+}
+@media (max-width: 1200px) {
+  .left_cards, .right_cards, .active_cards {
+    gap: 40px;
+  }
+}
+@media (max-width: 766px) {
+  .left_cards, .right_cards, .active_cards {
+    gap: 0;
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1s;
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1s;
 }
 
 .header_pets {
@@ -1070,12 +1113,17 @@ body {
 
 .carousel {
   display: flex;
-  flex-direction: row;
-  gap: 90px;
+  position: relative;
+  left: -990px;
 }
 @media (max-width: 1200px) {
   .carousel {
-    gap: 40px;
+    left: -580px;
+  }
+}
+@media (max-width: 766px) {
+  .carousel {
+    left: -270px;
   }
 }
 .carousel_box {
@@ -1102,16 +1150,6 @@ body {
   background: #FAFAFA;
   border-radius: 9px;
 }
-@media (max-width: 1200px) {
-  .carousel_card:last-child {
-    display: none;
-  }
-}
-@media (max-width: 766px) {
-  .carousel_card:nth-child(2) {
-    display: none;
-  }
-}
 .carousel_title {
   font-style: normal;
   font-weight: 400;
@@ -1129,6 +1167,10 @@ body {
   grid-row-gap: 30px;
   justify-content: center;
   margin-top: 60px;
+}
+.carousel_wrapper {
+  width: 990px;
+  overflow: hidden;
 }
 
 .pagination {
@@ -1155,21 +1197,6 @@ body {
 .margin_pets {
   padding-bottom: 30px;
   padding-top: 30px;
-}
-
-@media (max-width: 1200px) {
-  .hide_card:nth-child(7) {
-    display: none;
-  }
-}
-@media (max-width: 766px) {
-  .hide_card {
-    display: none;
-  }
-}
-
-.card_flex:nth-child(2) {
-  display: flex;
 }
 
 .help {

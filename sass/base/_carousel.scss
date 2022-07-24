@@ -1,0 +1,37 @@
+.left_cards , .right_cards, .active_cards{
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  @include media-tablet{
+    gap: 40px;
+  }
+  @include media-mobile{
+    gap: 0;
+  }
+}
+
+
+@keyframes move-right {
+  from {left: -990px}
+  to {left: -1980px}
+
+}
+
+@keyframes move-left {
+  from {left: -990px}
+  to {left: 0}
+}
+
+
+.transition-right{
+  animation-name: move-right;
+  animation-duration: 1s;
+
+}
+
+.transition-left{
+  animation-name: move-left;
+  animation-duration: 1s;
+
+
+}
