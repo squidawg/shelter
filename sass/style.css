@@ -603,7 +603,7 @@ template {
 @media (max-width: 766px) {
   .prev {
     position: absolute;
-    top: 302.6%;
+    top: 110%;
     left: 21.3%;
   }
 }
@@ -615,7 +615,7 @@ template {
 @media (max-width: 766px) {
   .next {
     position: absolute;
-    top: 302.6%;
+    top: 110%;
     right: 21.3%;
   }
 }
@@ -674,30 +674,86 @@ body {
   }
 }
 
-@keyframes move-right {
-  from {
-    left: -990px;
-  }
-  to {
-    left: -1980px;
-  }
-}
 @keyframes move-left {
   from {
-    left: -990px;
+    right: -990px;
   }
   to {
     left: 0;
+  }
+  @media (max-width: 1280px) {
+    from {
+      right: -580px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  @media (max-width: 766px) {
+    from {
+      right: -270px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+}
+@keyframes move-right-laptop {
+  from {
+    right: -580px;
+  }
+  to {
+    left: -1160px;
+  }
+}
+@keyframes move-right-mobile {
+  from {
+    right: -270px;
+  }
+  to {
+    left: -540px;
+  }
+}
+@keyframes move-right {
+  from {
+    right: -990px;
+  }
+  to {
+    left: -1980px;
   }
 }
 .transition-right {
   animation-name: move-right;
   animation-duration: 1s;
 }
+@media (max-width: 1280px) {
+  .transition-right {
+    animation-name: move-right-laptop;
+  }
+}
+@media (max-width: 766px) {
+  .transition-right {
+    animation-name: move-right-mobile;
+  }
+}
 
 .transition-left {
   animation-name: move-left;
   animation-duration: 1s;
+}
+
+.carousel {
+  width: 990px;
+}
+@media (max-width: 1280px) {
+  .carousel {
+    width: 580px;
+  }
+}
+@media (max-width: 766px) {
+  .carousel {
+    width: 270px;
+  }
 }
 
 .header_pets {
@@ -1128,6 +1184,7 @@ body {
   }
 }
 .carousel_box {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 53px;
@@ -1172,6 +1229,16 @@ body {
 .carousel_wrapper {
   width: 990px;
   overflow: hidden;
+}
+@media (max-width: 1280px) {
+  .carousel_wrapper {
+    width: 580px;
+  }
+}
+@media (max-width: 766px) {
+  .carousel_wrapper {
+    width: 270px;
+  }
 }
 
 .pagination {
@@ -1611,6 +1678,18 @@ body {
   display: flex;
   position: relative;
 }
+@media (max-width: 1280px) {
+  .modal_wrapper {
+    width: 682px;
+    height: 402px;
+  }
+}
+@media (max-width: 766px) {
+  .modal_wrapper {
+    width: 271px;
+    height: 393px;
+  }
+}
 .modal_content {
   width: 900px;
   height: 500px;
@@ -1618,22 +1697,74 @@ body {
   border-radius: 9px;
   margin-top: 52px;
 }
+@media (max-width: 1280px) {
+  .modal_content {
+    width: 630px;
+    height: 350px;
+  }
+}
+@media (max-width: 766px) {
+  .modal_content {
+    width: 240px;
+    height: 341px;
+  }
+}
 .modal_content_wrapper {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
+@media (max-width: 1280px) {
+  .modal_content_wrapper {
+    gap: 20px;
+  }
+}
+@media (max-width: 766px) {
+  .modal_content_wrapper {
+    align-items: center;
+  }
+}
 .modal_content-text {
   margin-top: 50px;
+}
+@media (max-width: 1280px) {
+  .modal_content-text {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
 }
 .modal_content_inner {
   display: flex;
   flex-direction: row;
   gap: 30px;
 }
+@media (max-width: 1280px) {
+  .modal_content_inner {
+    gap: 11px;
+  }
+}
+@media (max-width: 766px) {
+  .modal_content_inner {
+    justify-content: center;
+  }
+}
 .modal_content-pet-image {
   width: 500px;
   height: 500px;
+}
+@media (max-width: 1280px) {
+  .modal_content-pet-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 9px;
+  }
+}
+@media (max-width: 766px) {
+  .modal_content-pet-image {
+    display: none;
+  }
 }
 .modal_content-name {
   color: #000000;
@@ -1641,6 +1772,11 @@ body {
 .modal_content-breed {
   text-align: left;
   color: #000000;
+}
+@media (max-width: 766px) {
+  .modal_content-breed {
+    text-align: center;
+  }
 }
 .modal_content-description, .list_element {
   font-style: normal;
@@ -1651,6 +1787,18 @@ body {
   color: #000000;
   margin: 0;
   width: 350px;
+  display: flex;
+}
+@media (max-width: 1280px) {
+  .modal_content-description, .list_element {
+    font-size: 13px;
+    max-width: 261px;
+  }
+}
+@media (max-width: 766px) {
+  .modal_content-description, .list_element {
+    width: 220px;
+  }
 }
 .modal_content-list {
   list-style: none;
@@ -1659,6 +1807,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 11px;
+}
+@media (max-width: 766px) {
+  .modal_content-list {
+    gap: 6px;
+  }
 }
 .modal_close {
   border: 2px solid #F1CDB3;
@@ -1669,6 +1822,12 @@ body {
   position: absolute;
   right: 10px;
   top: 0;
+}
+@media (max-width: 766px) {
+  .modal_close {
+    right: -10px;
+    top: 5px;
+  }
 }
 .modal_close-icon {
   width: 12px;

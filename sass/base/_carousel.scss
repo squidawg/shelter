@@ -11,21 +11,45 @@
 }
 
 
-@keyframes move-right {
-  from {left: -990px}
-  to {left: -1980px}
 
-}
 
 @keyframes move-left {
-  from {left: -990px}
+  from {right: -990px}
   to {left: 0}
+  @include media-laptop{
+    from {right: -580px};
+    to {left: -0px}
+
+  }
+  @include media-mobile{
+    from {right: -270px}
+    to {left: -0px}
+  }
+}
+
+@keyframes move-right-laptop {
+  from {right: -580px}
+  to {left: -1160px}
+}
+@keyframes move-right-mobile {
+  from {right: -270px}
+  to {left: -540px}
+}
+@keyframes move-right {
+  from {right: -990px}
+  to {left: -1980px}
 }
 
 
 .transition-right{
   animation-name: move-right;
   animation-duration: 1s;
+  @include media-laptop{
+    animation-name: move-right-laptop;
+  }
+  @include media-mobile{
+    animation-name: move-right-mobile;
+  }
 
 }
 
@@ -34,4 +58,14 @@
   animation-duration: 1s;
 
 
+}
+
+.carousel{
+  width: 990px;
+  @include media-laptop{
+    width: 580px;
+  }
+  @include media-mobile{
+    width: 270px;
+  }
 }
