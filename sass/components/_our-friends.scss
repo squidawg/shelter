@@ -46,6 +46,7 @@
     left: -270px;
   }
   &_box {
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 53px;
@@ -87,6 +88,12 @@
   &_wrapper{
     width: 990px;
     overflow: hidden;
+    @include media-laptop{
+      width: 580px;
+    }
+    @include media-mobile{
+      width: 270px;
+    }
   }
 }
 

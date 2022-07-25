@@ -17,6 +17,15 @@
     height: 552px;
     display: flex;
     position: relative;
+    @include media-laptop{
+      width: 682px;
+      height: 402px;
+    }
+    @include media-mobile{
+      width: 271px;
+      height: 393px;
+    }
+
   }
 
   &_content{
@@ -25,32 +34,70 @@
     background-color: $color-light;
     border-radius: 9px;
     margin-top: 52px;
+    @include media-laptop{
+      width: 630px;
+      height: 350px;
+    }
+    @include media-mobile{
+      width: 240px;
+      height: 341px;
+    }
     &_wrapper{
       display: flex;
       flex-direction: column;
       gap: 40px;
+      @include media-laptop{
+        gap: 20px;
+      }
+      @include media-mobile{
+        align-items: center;
+      }
     }
     &-text{
       margin-top: 50px;
+      @include media-laptop{
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+      }
     }
 
     &_inner{
       display: flex;
       flex-direction: row;
       gap: 30px;
+      @include media-laptop{
+        gap: 11px;
+      }
+      @include media-mobile{
+        justify-content: center;
+      }
     }
     &-pet-image{
       width: 500px;
       height: 500px;
+      @include media-laptop{
+        width: 350px;
+        height: 350px;
+        border-radius: 9px;
+      }
+      @include media-mobile{
+        display: none;
+      }
     }
     &-name{
       @extend .section_title;
       color: $color-heading__modal;
+
     }
     &-breed{
       @extend .carousel_title;
       text-align: left;
       color: $color-heading__modal;
+      @include media-mobile{
+        text-align: center;
+      }
     }
     &-description{
       @extend %font-georgia;
@@ -58,6 +105,14 @@
       color: $color-heading__modal;
       margin: 0;
       width: 350px;
+      display: flex;
+      @include media-laptop{
+        font-size: 13px;
+        max-width: 261px;
+      }
+      @include media-mobile{
+        width: 220px;
+      }
     }
     &-list{
       list-style: none;
@@ -66,6 +121,9 @@
       display: flex;
       flex-direction: column;
       gap: 11px;
+      @include media-mobile{
+        gap: 6px;
+      }
 
 
     }
@@ -80,6 +138,10 @@
     position: absolute;
     right: 10px;
     top: 0;
+    @include media-mobile{
+      right: -10px;
+      top: 5px;
+    }
 
     &-icon{
       width: 12px;
