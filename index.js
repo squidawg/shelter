@@ -1,3 +1,4 @@
+import {Modal} from "./Modal.js";
 const BTN_LEFT = document.querySelector("#btn_left");
 const BTN_RIGHT = document.querySelector("#btn_right");
 const CAROUSEL = document.querySelector(".carousel");
@@ -14,22 +15,28 @@ async function readJSON() {
 }
 
 async function init(){
-    await readJSON()
+    await readJSON();
     cardGenerator();
 }
+
+const generateToolsModal = (...element) => {
+    renderModalWindow(createModalContent(...element));
+}
+
+const renderModalWindow = (content) => {
+    let modal = new Modal('tools-modal');
+    modal.buildModal(content);
+}
+
 
 function cardGenerator() {
     let clientWidth = document.querySelector('body').clientWidth;
     cardQuantity = clientWidth > 1201 ? 3 : clientWidth < 1200 && clientWidth > 768 ? 2 : 1;
     let arr = [ITEM_LEFT, ITEM_RIGHT, ITEM_ACTIVE];
-    for (let i = 0; i < arr.length; i++) {
-        let switchedItem = arr[i];
-        generateCardAppend(switchedItem, cardQuantity);
-    }
+    arr.forEach((element) =>{
+        generateCardAppend(element, cardQuantity);
+    });
 }
-
-document.addEventListener('DOMContentLoaded', init, false);
-
 
 function createElement(tag, ...classList) {
     const element = document.createElement(tag);
@@ -39,19 +46,21 @@ function createElement(tag, ...classList) {
 
 const createCardTemplate = (...element) => {
      const card = createElement("div", "carousel_card");
-     const promoButton = createElement("div", "promo__button")
+     const promoButton = createElement("div", "promo__button");
      const img = createElement("img", "carousel_image");
      img.src = element[1];
-     img.alt = "carousel_image"
+     img.alt = "carousel_image";
 
      const title = createElement("p", "carousel_title");
      title.innerText = element[0];
 
      const btn = createElement("button", "button", "button_bordered");
-     btn.innerText = "Learn more"
+     btn.innerText = "Learn more";
+     btn.addEventListener("click", () =>
+        generateToolsModal(...element));
 
      promoButton.append(btn);
-     card.append(img, title, promoButton)
+     card.append(img, title, promoButton);
 
      return card;
 }
@@ -105,7 +114,7 @@ CAROUSEL.addEventListener('animationend', (animationEvent) => {
 
     document.querySelector("#active_cards").innerHTML = "";
     while (switchedItem.childNodes.length > 0) {
-        document.querySelector("#active_cards").appendChild(switchedItem.childNodes[0]);
+        document.querySelector("#active_cards").append(switchedItem.childNodes[0]);
     }
 
     generateCardAppend(switchedItem, cardQuantity);
@@ -114,6 +123,40 @@ CAROUSEL.addEventListener('animationend', (animationEvent) => {
     BTN_LEFT.addEventListener("click", moveLeft);
     BTN_RIGHT.addEventListener("click", moveRight);
 });
+
+const createModalContent = (...element) => {
+
+    const modal_content = createElement("div", 'modal_content_inner');
+    const modal_content_text = createElement('div', "modal_content-text");
+    const modal_list = createElement('ul',"modal_content-list" )
+    const modal_content_wrapper = createElement("div", 'modal_content_wrapper');
+
+    const img = document.createElement("img");
+    img.src =  element[1];
+    img.classList.add("modal_content-pet-image");
+
+    const petName = createElement('h3', "modal_content-name");
+    petName.innerText = element[0];
+    const petBreed = createElement('h4', "modal_content-breed");
+    petBreed.innerText = `${element[2]} - ${element[3]}`;
+    const petDescription = createElement('h5', "modal_content-description");
+    petDescription.innerText = element[4];
+
+    let i = 5;
+    while (i <= 8){
+        let key = Object.keys(cards[0])[i];
+        let list_element = createElement('li', "list_element" )
+        list_element.innerText = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${element[i]} `
+        modal_list.append(list_element)
+        i++
+    }
+
+    modal_content_text.append(petName, petBreed);
+    modal_content_wrapper.append(modal_content_text, petDescription, modal_list);
+    modal_content.append(img, modal_content_wrapper);
+
+    return modal_content;
+}
 
 function randomUniqueNum(range, outputCount){
     let arr = []
@@ -131,3 +174,5 @@ function randomUniqueNum(range, outputCount){
 
     return result;
 }
+
+init();
