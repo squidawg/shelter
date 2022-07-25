@@ -30,8 +30,8 @@ const renderModalWindow = (content) => {
 
 
 function cardGenerator() {
-    let clientWidth = document.querySelector('body').clientWidth;
-    cardQuantity = clientWidth > 1201 ? 3 : clientWidth < 1200 && clientWidth > 768 ? 2 : 1;
+    let clientWidth = document.querySelector('.carousel').clientWidth;
+    cardQuantity = clientWidth === 990 ? 3 : clientWidth === 580 ? 2 : 1;
     let arr = [ITEM_LEFT, ITEM_RIGHT, ITEM_ACTIVE];
     arr.forEach((element) =>{
         generateCardAppend(element, cardQuantity);
