@@ -148,18 +148,21 @@
       height: 12px;
       background-image: url("../assets/icons/modal_close_btn.svg");
       display: inline-flex;
+      cursor: pointer;
     }
   }
 }
 
 .list_element{
   @extend .modal_content-description;
+  text-transform: capitalize;
   &:before{
     content: "\2022";
     color: $color-primary;
     font-weight: bold;
     display: inline-block;
     width: 1em;
+
   }
 
 }

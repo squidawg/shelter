@@ -12,16 +12,5 @@ body{
   overflow-x: hidden ;
 }
 
-.section_title{
-  margin: 0;
-  @extend %font-georgia;
-  @include font(35px, 45.5px, $letter-spacing: 0.06em);
-  color: $color-heading;
-  @include media-mobile{
-    @include font(25px, 32.5px, $letter-spacing: 0.06em);
-    text-align: center;
 
-  }
-
-}
 

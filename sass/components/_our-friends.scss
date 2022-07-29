@@ -23,12 +23,20 @@
 }
 
 .section_title{
-
+    margin: 0;
+    @extend %font-georgia;
+    @include font(35px, 45.5px, $letter-spacing: 0.06em);
+    color: $color-heading;
+    @include media-mobile{
+      @include font(25px, 32.5px, $letter-spacing: 0.06em);
+      text-align: center;
+    }
   &-container{
     width: 400px;
     height: 90px;
     text-align: center;
     margin-top: 80px;
+    margin-bottom: 60px;
     @include media-mobile{
       margin-top: 42px;
     }
@@ -97,14 +105,22 @@
   }
 }
 
-
-
 //pets
 .pagination{
   display: flex;
   flex-direction: row;
   margin: 60px 0 100px 0;
   gap: 20px;
+  &_wrapper{
+    width: 1200px;
+    overflow: hidden;
+    position: relative;
+  }
+  &_first, &_second, &_third, &_forth, &_last{
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 30px 40px;
+  }
   &_item{
     @extend %font-georgia;
     @include font(20px, 23px,$letter-spacing: 0.06em);
@@ -114,6 +130,19 @@
   @include media-mobile{
     gap: 10px;
   }
+  &_box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row: auto;
+    position: relative;
+    left: -2400px;
+    @include media-tablet{
+      width: 580px;
+    }
+    @include media-mobile{
+      width: 270px;
+    }
+  }
 }
 
 .margin_pets{
@@ -121,3 +150,33 @@
   padding-top: 30px;
 }
 
+
+@keyframes pagination-toLeft {
+  from {right: -2400px}
+  to{left: -1200px}
+}
+
+@keyframes pagination-toRight {
+  from {right: -2400px}
+  to{left: -6000px}
+}
+
+@keyframes pagination-toLast {
+  from {right: -2400}
+  to{left: -3600px}
+}
+
+.pagination-last{
+  animation-name: pagination-toLast;
+  animation-duration: 1s;
+}
+
+.pagination-left{
+  animation-name: pagination-toLeft;
+  animation-duration: 1s;
+}
+
+.pagination-right{
+  animation-name: pagination-toRight;
+  animation-duration: 1s;
+}

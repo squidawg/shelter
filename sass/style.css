@@ -458,7 +458,7 @@ template {
   font-family: "Arial", sans-serif;
 }
 
-.modal_content-description, .list_element, .contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .pagination_item, .carousel_title, .modal_content-breed, .promo_title, .logo_title, .section_title, .modal_content-name, .section_name, .arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
+.modal_content-description, .list_element, .contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .pagination_item, .carousel_title, .modal_content-breed, .section_title, .modal_content-name, .section_name, .promo_title, .logo_title, .arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -636,26 +636,6 @@ template {
 body {
   margin: 0;
   overflow-x: hidden;
-}
-
-.section_title, .modal_content-name, .section_name {
-  margin: 0;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 45.5px;
-  letter-spacing: 0.06em;
-  color: #545454;
-}
-@media (max-width: 766px) {
-  .section_title, .modal_content-name, .section_name {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 32.5px;
-    letter-spacing: 0.06em;
-    text-align: center;
-  }
 }
 
 .left_cards, .right_cards, .active_cards {
@@ -1156,11 +1136,31 @@ body {
   }
 }
 
+.section_title, .modal_content-name, .section_name {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 45.5px;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+@media (max-width: 766px) {
+  .section_title, .modal_content-name, .section_name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32.5px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+}
 .section_title-container {
   width: 400px;
   height: 90px;
   text-align: center;
   margin-top: 80px;
+  margin-bottom: 60px;
 }
 @media (max-width: 766px) {
   .section_title-container {
@@ -1247,6 +1247,16 @@ body {
   margin: 60px 0 100px 0;
   gap: 20px;
 }
+.pagination_wrapper {
+  width: 1200px;
+  overflow: hidden;
+  position: relative;
+}
+.pagination_first, .pagination_second, .pagination_third, .pagination_forth, .pagination_last {
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  gap: 30px 40px;
+}
 .pagination_item {
   font-style: normal;
   font-weight: 400;
@@ -1261,10 +1271,66 @@ body {
     gap: 10px;
   }
 }
+.pagination_box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row: auto;
+  position: relative;
+  left: -2400px;
+}
+@media (max-width: 1200px) {
+  .pagination_box {
+    width: 580px;
+  }
+}
+@media (max-width: 766px) {
+  .pagination_box {
+    width: 270px;
+  }
+}
 
 .margin_pets {
   padding-bottom: 30px;
   padding-top: 30px;
+}
+
+@keyframes pagination-toLeft {
+  from {
+    right: -2400px;
+  }
+  to {
+    left: -1200px;
+  }
+}
+@keyframes pagination-toRight {
+  from {
+    right: -2400px;
+  }
+  to {
+    left: -6000px;
+  }
+}
+@keyframes pagination-toLast {
+  from {
+    right: -2400;
+  }
+  to {
+    left: -3600px;
+  }
+}
+.pagination-last {
+  animation-name: pagination-toLast;
+  animation-duration: 1s;
+}
+
+.pagination-left {
+  animation-name: pagination-toLeft;
+  animation-duration: 1s;
+}
+
+.pagination-right {
+  animation-name: pagination-toRight;
+  animation-duration: 1s;
 }
 
 .help {
@@ -1834,8 +1900,12 @@ body {
   height: 12px;
   background-image: url("../assets/icons/modal_close_btn.svg");
   display: inline-flex;
+  cursor: pointer;
 }
 
+.list_element {
+  text-transform: capitalize;
+}
 .list_element:before {
   content: "•";
   color: #F1CDB3;

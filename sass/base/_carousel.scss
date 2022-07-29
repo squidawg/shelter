@@ -9,10 +9,7 @@
     gap: 0;
   }
 }
-
-
-
-
+// move-left behaves normal in all kind resolutions
 @keyframes move-left {
   from {right: -990px}
   to {left: 0}
@@ -26,7 +23,7 @@
     to {left: -0px}
   }
 }
-
+// move-right only works if keyframes separated
 @keyframes move-right-laptop {
   from {right: -580px}
   to {left: -1160px}

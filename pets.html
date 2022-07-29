@@ -41,87 +41,19 @@
         <h3 class="section_title">Our friends who<br>
             are looking for a house</h3>
         </div>
-        <div class="carousel_box">
-            <div class="carousel carousel_pets">
-                <div class="carousel_card">
-                    <img class="carousel_image" src="assets/images/cards/1.png" alt="carousel_image">
-                    <p class="carousel_title">Katrine</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-
-                <div class="card_flex carousel_card">
-                    <img class="carousel_image" src="assets/images/cards/2.png" alt="carousel_image">
-                    <p class="carousel_title">Jennifer</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-
-                <div class="carousel_card card_flex">
-                    <img class="carousel_image" src="assets/images/cards/3.png" alt="carousel_image">
-                    <p class="carousel_title">Woody</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-
-                <div class="carousel_card hide_card">
-                    <img class="carousel_image" src="assets/images/cards/4.png" alt="carousel_image">
-                    <p class="carousel_title">Sofia</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-                <div class="carousel_card hide_card">
-                    <img class="carousel_image" src="assets/images/cards/5.png" alt="carousel_image">
-                    <p class="carousel_title">Timmy</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-                <div class="carousel_card hide_card">
-                    <img class="carousel_image" src="assets/images/cards/6.png" alt="carousel_image">
-                    <p class="carousel_title">Charly</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-                <div class="carousel_card hide_card">
-                    <img class="carousel_image" src="assets/images/cards/7.png" alt="carousel_image">
-                    <p class="carousel_title">Scarlett</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-                <div class="carousel_card hide_card">
-                    <img class="carousel_image" src="assets/images/cards/8.png" alt="carousel_image">
-                    <p class="carousel_title">Freddie</p>
-                    <div class="promo__button">
-                        <button class="button button_bordered" onclick="location.href='pets.html'">Learn more</button>
-                    </div>
-
-                </div>
-
-
-
+        <div class="pagination_wrapper">
+            <div class="pagination_box">
+                <div class="pagination_second" id="left_cards"></div>
+                <div class="pagination_third" id="third_cards"></div>
+                <div class="pagination_forth" id="right_cards"></div>
             </div>
-
         </div>
         <div class="pagination">
-            <button class="button arrow_bordered_inactive"><p class="pagination_item"><<</p></button>
-            <button class="button arrow_bordered_inactive"><p class="pagination_item"><</p></button>
-            <button class="button arrow_bordered"><p class="pagination_item">1</p></button>
-            <button class="button arrow_bordered"><p class="pagination_item">></p></button>
-            <button class="button arrow_bordered"><p class="pagination_item">>></p></button>
+            <button class="button arrow_bordered" id="pagination_first"><p class="pagination_item"><<</p></button>
+            <button class="button arrow_bordered" id="pagination_left" ><p  class="pagination_item"><</p></button>
+            <button class="button arrow_bordered" id="page_counter">1</button>
+            <button class="button arrow_bordered" id="pagination_right"><p class="pagination_item">></p></button>
+            <button class="button arrow_bordered" id="pagination_last"><p class="pagination_item">>></p></button>
 
 
         </div>
@@ -171,5 +103,6 @@
         </div>
     </footer>
 </div>
+<script type="module" src="scripts/pets.js"></script>
 </body>
 </html>

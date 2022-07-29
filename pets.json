@@ -86,5 +86,28 @@
     "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
     "diseases": ["deafness", "blindness"],
     "parasites": ["lice", "fleas"]
+  },
+  {
+    "name": "Tony",
+    "img": "assets/images/cards/9.png",
+    "type": "Dog",
+    "breed": "Bulldog",
+    "description": "Tony is a very clever dog and is very useful in catching thieves. He runs very fast, barks loudly and attacks the strangers.",
+    "age": "3 months",
+    "inoculations": ["none"],
+    "diseases": ["none"],
+    "parasites": ["none"]
+  },
+
+  {
+    "name": "Fluff",
+    "img": "assets/images/cards/11.png",
+    "type": "Dog",
+    "breed": "Doodle",
+    "description": " is a puff",
+    "age": "6 years",
+    "inoculations": ["none"],
+    "diseases": ["none"],
+    "parasites": ["none"]
   }
 ]
