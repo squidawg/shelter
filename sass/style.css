@@ -458,7 +458,7 @@ template {
   font-family: "Arial", sans-serif;
 }
 
-.modal_content-description, .list_element, .contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .pagination_item, .carousel_title, .modal_content-breed, .section_title, .modal_content-name, .section_name, .promo_title, .logo_title, .arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
+.modal_content-description, .list_element, .contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .carousel_title, .modal_content-breed, .section_title, .modal_content-name, .section_name, .promo_title, .logo_title, .arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -636,6 +636,13 @@ template {
 body {
   margin: 0;
   overflow-x: hidden;
+}
+
+:root {
+  --keyframes-move-laptop: -1200px;
+  --keyframes-move-tablet: 580px;
+  --keyframes-move-mobile: 270px;
+  --change-posititon: 0;
 }
 
 .left_cards, .right_cards, .active_cards {
@@ -1241,6 +1248,23 @@ body {
   }
 }
 
+.page {
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  gap: 30px 40px;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 766px) {
+  .page {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .pagination {
   display: flex;
   flex-direction: row;
@@ -1252,19 +1276,15 @@ body {
   overflow: hidden;
   position: relative;
 }
-.pagination_first, .pagination_second, .pagination_third, .pagination_forth, .pagination_last {
-  grid-template-columns: repeat(4, 1fr);
-  display: grid;
-  gap: 30px 40px;
+@media (max-width: 1200px) {
+  .pagination_wrapper {
+    width: 580px;
+  }
 }
-.pagination_item {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.06em;
-  text-align: center;
-  align-items: center;
+@media (max-width: 766px) {
+  .pagination_wrapper {
+    width: 270px;
+  }
 }
 @media (max-width: 766px) {
   .pagination {
@@ -1273,18 +1293,21 @@ body {
 }
 .pagination_box {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-row: auto;
   position: relative;
-  left: -2400px;
+  left: 0;
+  transition-duration: 1s;
 }
 @media (max-width: 1200px) {
   .pagination_box {
+    grid-template-columns: repeat(8, 1fr);
     width: 580px;
   }
 }
 @media (max-width: 766px) {
   .pagination_box {
+    grid-template-columns: repeat(16, 1fr);
     width: 270px;
   }
 }
@@ -1292,45 +1315,6 @@ body {
 .margin_pets {
   padding-bottom: 30px;
   padding-top: 30px;
-}
-
-@keyframes pagination-toLeft {
-  from {
-    right: -2400px;
-  }
-  to {
-    left: -1200px;
-  }
-}
-@keyframes pagination-toRight {
-  from {
-    right: -2400px;
-  }
-  to {
-    left: -6000px;
-  }
-}
-@keyframes pagination-toLast {
-  from {
-    right: -2400;
-  }
-  to {
-    left: -3600px;
-  }
-}
-.pagination-last {
-  animation-name: pagination-toLast;
-  animation-duration: 1s;
-}
-
-.pagination-left {
-  animation-name: pagination-toLeft;
-  animation-duration: 1s;
-}
-
-.pagination-right {
-  animation-name: pagination-toRight;
-  animation-duration: 1s;
 }
 
 .help {

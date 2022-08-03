@@ -105,6 +105,19 @@
   }
 }
 
+.page{
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  gap: 30px 40px;
+  width: 100%;
+  @include media-tablet{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media-mobile{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 //pets
 .pagination{
   display: flex;
@@ -115,31 +128,29 @@
     width: 1200px;
     overflow: hidden;
     position: relative;
-  }
-  &_first, &_second, &_third, &_forth, &_last{
-    grid-template-columns: repeat(4, 1fr);
-    display: grid;
-    gap: 30px 40px;
-  }
-  &_item{
-    @extend %font-georgia;
-    @include font(20px, 23px,$letter-spacing: 0.06em);
-    text-align: center;
-    align-items: center;
+    @include media-tablet{
+      width: 580px;
+    }
+    @include media-mobile{
+      width: 270px;
+    }
   }
   @include media-mobile{
     gap: 10px;
   }
   &_box {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-row: auto;
     position: relative;
-    left: -2400px;
+    left: 0;
+    transition-duration: 1s;
     @include media-tablet{
+      grid-template-columns: repeat(8, 1fr);
       width: 580px;
     }
     @include media-mobile{
+      grid-template-columns: repeat(16, 1fr);
       width: 270px;
     }
   }
@@ -150,33 +161,3 @@
   padding-top: 30px;
 }
 
-
-@keyframes pagination-toLeft {
-  from {right: -2400px}
-  to{left: -1200px}
-}
-
-@keyframes pagination-toRight {
-  from {right: -2400px}
-  to{left: -6000px}
-}
-
-@keyframes pagination-toLast {
-  from {right: -2400}
-  to{left: -3600px}
-}
-
-.pagination-last{
-  animation-name: pagination-toLast;
-  animation-duration: 1s;
-}
-
-.pagination-left{
-  animation-name: pagination-toLeft;
-  animation-duration: 1s;
-}
-
-.pagination-right{
-  animation-name: pagination-toRight;
-  animation-duration: 1s;
-}
