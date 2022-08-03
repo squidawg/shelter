@@ -1,5 +1,6 @@
 import {readJSON} from "./readJSON.js";
 import {generateCardAppend} from "./generateCardAppend.js";
+import {aside, HAMBURGER, logo, slider} from "./BurgerMenu.js";
 
 const BTN_LEFT = document.querySelector("#btn_left");
 const BTN_RIGHT = document.querySelector("#btn_right");
@@ -11,9 +12,32 @@ const ITEM_ACTIVE = document.querySelector(".active_cards");
 
 let cardQuantity;
 let time;
+HAMBURGER.addEventListener('click', function (){
+    const overlay = document.querySelector('.aside_overlay');
+    const wrapper = document.querySelector('.aside_wrapper');
+
+    if(HAMBURGER.style.transform === 'rotate(-90deg)'){
+        HAMBURGER.style.transform = 'rotate(0deg)';
+        slider(wrapper, '-320px')
+        overlay.style.display = 'none'
+        logo.style.display = 'flex'
+        document.body.style.overflow = 'initial'
+    }
+    else {
+        HAMBURGER.style.transform = 'rotate(-90deg)'
+        document.body.style.overflow = 'hidden'
+        logo.style.display = 'none'
+        slider(wrapper, '0px')
+        overlay.style.display = 'flex'
+    }
+
+})
+
+
 async function init(){
     await readJSON();
     carouselGenerator();
+    aside();
 }
 
 window.onresize = function (){
@@ -72,5 +96,7 @@ CAROUSEL.addEventListener('animationend', (animationEvent) => {
     BTN_LEFT.addEventListener("click", moveLeft);
     BTN_RIGHT.addEventListener("click", moveRight);
 });
+
+
 
 init();

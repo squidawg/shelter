@@ -127,10 +127,13 @@
 
 .hamburger{
     display: flex;
-    position: relative;
+    right: 53px;
+    top: 49px;
+    position: absolute;
     width: 30px;
     height: 22px;
-    margin-top: 19px;
+    z-index: 100;
+    transition-duration: 1s;
     @include media-over__laptop{
       display: none;
     }
@@ -163,3 +166,45 @@
 }
 
 
+.aside{
+  &_wrapper{
+    width: 320px;
+    height: 100%;
+    overflow-y: hidden;
+    background: $color-button;
+    transition-duration: 1s;
+    position: absolute;
+    right: -320px;
+  }
+  &_overlay{
+    width: 100%;
+    height: 100%;
+    background-color: $color-background-overlay;
+    position: absolute;
+    flex-direction: row-reverse;
+    transition-duration: 1s;
+    display: none;
+  }
+  &_inner{
+    margin-left: 10px;
+    margin-top: 30px;
+    display: flex;
+
+  }
+  &_list{
+    margin: auto;
+    width: 243px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 158px;
+    gap: 40px;
+    padding: 0;
+    list-style: none;
+    flex-direction: column;
+    &>li>a{
+      @extend .navigation_link;
+      font-size: 32px;
+    }
+  }
+}
