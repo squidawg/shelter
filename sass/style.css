@@ -450,7 +450,7 @@ template {
   display: none;
 }
 
-.arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
+.arrow, .arrow_bordered, .button {
   transition: all 0.3s ease-out;
 }
 
@@ -458,7 +458,7 @@ template {
   font-family: "Arial", sans-serif;
 }
 
-.modal_content-description, .list_element, .contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .carousel_title, .modal_content-breed, .section_title, .modal_content-name, .section_name, .promo_title, .logo_title, .arrow, .arrow_bordered_inactive, .arrow_bordered, .button {
+.modal_content-description, .list_element, .contacts_subtitle, .card_number, .donation_subtitle, .grid_title, .carousel_title, .modal_content-breed, .section_title, .modal_content-name, .section_name, .promo_title, .logo_title, .arrow, .arrow_bordered, .button {
   font-family: "Georgia", sans-serif;
 }
 
@@ -563,7 +563,7 @@ template {
   background: #FDDCC4;
 }
 
-.arrow, .arrow_bordered_inactive, .arrow_bordered {
+.arrow, .arrow_bordered {
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -586,14 +586,6 @@ template {
 .arrow_bordered:hover {
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
-}
-.arrow_bordered_inactive {
-  justify-content: center;
-  cursor: default;
-  background: #FAFAFA;
-  border: 2px solid #CDCDCD;
-  align-items: center;
-  color: #CDCDCD;
 }
 
 .prev {
@@ -639,10 +631,7 @@ body {
 }
 
 :root {
-  --keyframes-move-laptop: -1200px;
-  --keyframes-move-tablet: 580px;
-  --keyframes-move-mobile: 270px;
-  --change-posititon: 0;
+  --burger-pets: #9a9490 ;
 }
 
 .left_cards, .right_cards, .active_cards {
@@ -743,11 +732,15 @@ body {
   }
 }
 
-.header_pets {
+.header_pets, .header_pets-inactive {
   position: sticky;
   top: 0;
   z-index: 10;
   background: #FFFFFF;
+}
+
+.header_pets-inactive {
+  position: initial;
 }
 
 .top_layout {
@@ -872,8 +865,8 @@ body {
   position: absolute;
   width: 30px;
   height: 22px;
-  z-index: 100;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
+  z-index: 2;
 }
 @media (max-width: 3000px) {
   .hamburger, .hamburger-pets {
@@ -919,6 +912,7 @@ body {
   flex-direction: row-reverse;
   transition-duration: 1s;
   display: none;
+  z-index: 1;
 }
 .aside_inner {
   margin-left: 10px;
@@ -939,6 +933,22 @@ body {
 }
 .aside_list > li > a {
   font-size: 32px;
+}
+
+.burger_closed {
+  transform: rotate(0deg);
+}
+
+.burger_open {
+  transform: rotate(-90deg);
+}
+
+.rotate_open {
+  transform: translate(-320px);
+}
+
+.rotate_close {
+  transform: translate(0);
 }
 
 .not-only {

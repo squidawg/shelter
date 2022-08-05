@@ -5,6 +5,11 @@
   background: $color-background-h2;
 }
 
+.header_pets-inactive{
+  @extend .header_pets;
+  position: initial;
+}
+
 .top_layout{
   background-image:  url("../assets/images/start-screen-gradient-background.png");
   background-position: center;
@@ -51,6 +56,7 @@
     &-active{
       @extend .navigation_link;
       color: $color-light;
+
     }
 
 
@@ -132,8 +138,8 @@
     position: absolute;
     width: 30px;
     height: 22px;
-    z-index: 100;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
+    z-index: 2;
     @include media-over__laptop{
       display: none;
     }
@@ -184,6 +190,7 @@
     flex-direction: row-reverse;
     transition-duration: 1s;
     display: none;
+    z-index: 1;
   }
   &_inner{
     margin-left: 10px;
@@ -207,4 +214,21 @@
       font-size: 32px;
     }
   }
+}
+
+
+.burger_closed{
+  transform: rotate(0deg);
+}
+
+.burger_open{
+  transform: rotate(-90deg);
+}
+
+.rotate_open{
+  transform: translate(-320px);
+}
+
+.rotate_close{
+  transform: translate(0);
 }
