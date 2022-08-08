@@ -1,35 +1,50 @@
 import {createElement} from "./createElement.js";
 
 const navLink = document.querySelectorAll('.navigation_element');
-const HEADER = document.querySelector('body');
-const logo = document.querySelector('.logo');
+const BODY = document.querySelector('body');
+const LOGO = document.querySelector('.logo');
+export const HEADER = document.querySelector('.header');
 
 
-export function aside(elem){
+
+export function aside(elem, toggler,  classL){
     const overlay = createElement('div', 'aside_overlay');
     const wrapper = createElement('div', 'aside_wrapper');
     const burgerInner = createElement('div', 'aside_inner');
     const burgerLinks = createElement('ul', 'aside_list');
-    let burgerLogo = logo.cloneNode(true);
+    let burgerLogo = LOGO.cloneNode(true);
+    overlay.addEventListener('click', function (){
+        burgerClose(elem, wrapper);
+        overlay.classList.toggle('opacity-fadeIn')
+        toggler.classList.toggle(classL);
+        overlay.style.display = 'none';
+        BODY.style.overflow = 'initial';
+        LOGO.style.visibility = 'visible';
+    })
     navLink.forEach((element)=>{
         let listElement = element.cloneNode(true);
         listElement.addEventListener('click', function (){
             burgerClose(elem, wrapper)
+            overlay.classList.toggle('opacity-fadeIn')
+            toggler.classList.toggle(classL);
             overlay.style.display = 'none';
-            HEADER.style.overflow = 'initial';
-            logo.style.visibility = 'visible';
+            BODY.style.overflow = 'initial';
+            LOGO.style.visibility = 'visible';
         });
         burgerLinks.append(listElement);
     });
     burgerInner.append(burgerLogo);
     wrapper.append(burgerInner, burgerLinks);
-    overlay.append(wrapper);
-    HEADER.insertBefore(overlay, HEADER.children[0]);
+    BODY.insertBefore(wrapper,  BODY.children[0]);
+    BODY.insertBefore(overlay,  BODY.children[0]);
+
+
 }
 
 
 const burgerOpen = (element, translate) => {
-    element.classList.add('burger_open');
+    window.scrollTo(0, 0);
+    element.classList.toggle('burger_open');
     element.classList.remove('burger_closed');
     translate.classList.add('rotate_open');
     translate.classList.remove('rotate_close');
@@ -47,17 +62,26 @@ export function burgerChecker(element){
     const wrapper = document.querySelector('.aside_wrapper');
     if(element.classList.contains('burger_closed')){
         burgerOpen(element, wrapper);
+
+        overlay.classList.remove('opacity-fadeOut');
+        overlay.classList.add('opacity-fadeIn');
         document.body.style.overflow = 'hidden';
-        logo.style.visibility = 'hidden';
-        overlay.style.display = 'flex';
+        LOGO.style.visibility = 'hidden';
+
     }
     else {
         burgerClose(element, wrapper);
-        overlay.addEventListener('transitionend', function (){
-            overlay.style.display = 'none';
-        })
-        logo.style.visibility = 'visible';
+        overlay.classList.remove('opacity-fadeIn');
+        //overlay.classList.add('opacity-fadeOut');
+        overlay.style.display = 'none';
         document.body.style.overflow = 'initial';
+        LOGO.style.visibility = 'visible';
+
 
     }
+    wrapper.addEventListener('transitionend', function (animationEvent){
+        if(overlay.classList.contains('opacity-fadeIn')) {
+            overlay.style.display = 'flex';
+        }
+    })
 }

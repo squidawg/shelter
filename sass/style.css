@@ -900,17 +900,17 @@ body {
   height: 100%;
   overflow-y: hidden;
   background: #292929;
-  transition-duration: 1s;
   position: absolute;
   right: -320px;
+  z-index: 1;
+  transition-duration: 0.6s;
 }
 .aside_overlay {
-  width: 100%;
+  width: calc(100% - 320px);
   height: 100%;
   background-color: rgba(41, 41, 41, 0.6);
   position: absolute;
   flex-direction: row-reverse;
-  transition-duration: 1s;
   display: none;
   z-index: 1;
 }
@@ -949,6 +949,19 @@ body {
 
 .rotate_close {
   transform: translate(0);
+}
+
+@keyframes overlay-opacityFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.opacity-fadeIn {
+  animation-name: overlay-opacityFadeIn;
+  animation-duration: 0.4s;
 }
 
 .not-only {

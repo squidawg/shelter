@@ -1,6 +1,8 @@
 import {readJSON} from "./readJSON.js";
 import {generateCardAppend} from "./generateCardAppend.js";
 import {aside, burgerChecker} from "./BurgerMenu.js";
+import {HEADER} from "./BurgerMenu.js";
+
 
 const BTN_LEFT = document.querySelector("#btn_left");
 const BTN_RIGHT = document.querySelector("#btn_right");
@@ -19,7 +21,7 @@ HAMBURGER.addEventListener('click', function (){
 async function init(){
     await readJSON();
     carouselGenerator();
-    aside(HAMBURGER);
+    aside(HAMBURGER, HEADER, 'header-inactive');
 }
 
 window.onresize = function (){

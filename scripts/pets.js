@@ -1,6 +1,7 @@
 import {readJSON} from "./readJSON.js";
 import {paginationGenerator} from "./paginationGenerator.js";
 import {aside, burgerChecker} from "./BurgerMenu.js";
+import {HEADER} from "./BurgerMenu.js";
 export const PAGINATION = document.querySelector('.pagination_box');
 const PAG_FIRST = document.querySelector('#pagination_first');
 const PAG_LAST = document.querySelector('#pagination_last');
@@ -8,14 +9,13 @@ const PAG_RIGHT = document.querySelector('#pagination_right');
 const PAG_LEFT = document.querySelector('#pagination_left');
 const HAMBURGER_PETS = document.querySelector('.hamburger-pets');
 const PAGE_COUNTER = document.querySelector('#page_counter');
-const HEADER_PETS = document.querySelector('.header');
+
 let current = 0;
-let time;
 
 async function init_pets(){
     await readJSON();
     paginationGenerator();
-    aside(HAMBURGER_PETS);
+    aside(HAMBURGER_PETS, HEADER,  'header_pets-inactive');
     PAG_LEFT.disabled = true;
     PAG_FIRST.disabled = true;
 }
@@ -23,20 +23,16 @@ async function init_pets(){
 
 HAMBURGER_PETS.addEventListener('click', function (){
     const aside_wrapper = document.querySelector('.aside_wrapper');
-    if(HEADER_PETS.classList.contains('header_pets')){
-        HEADER_PETS.classList.add('header_pets-inactive');
-        HEADER_PETS.classList.remove('header_pets');
+    if(HEADER.classList.contains('header_pets')){
+        HEADER.classList.toggle('header_pets-inactive');
         aside_wrapper.style.background = '#9a9490';
         burgerChecker(HAMBURGER_PETS);
-        console.log(MouseEvent.clientY)
     }
     else {
         burgerChecker(HAMBURGER_PETS);
-        HEADER_PETS.classList.remove('header_pets-inactive');
-        HEADER_PETS.classList.add('header_pets');
-
-
-
+        aside_wrapper.addEventListener('transitionend', function (){
+            HEADER.classList.toggle('header_pets');
+        })
     }
 });
 
