@@ -1,7 +1,8 @@
 import {readJSON} from "./readJSON.js";
 import {paginationGenerator} from "./paginationGenerator.js";
-import {aside, burgerChecker} from "./BurgerMenu.js";
+import {burgerMenu, burgerController, burgerSwitcher} from "./BurgerMenu.js";
 import {HEADER} from "./BurgerMenu.js";
+
 export const PAGINATION = document.querySelector('.pagination_box');
 const PAG_FIRST = document.querySelector('#pagination_first');
 const PAG_LAST = document.querySelector('#pagination_last');
@@ -15,35 +16,37 @@ let current = 0;
 async function init_pets(){
     await readJSON();
     paginationGenerator();
-    aside(HAMBURGER_PETS, HEADER,  'header_pets-inactive');
+    burgerMenu(HAMBURGER_PETS, HEADER,  'header_pets-inactive');
     PAG_LEFT.disabled = true;
     PAG_FIRST.disabled = true;
+}
+window.onresize = function (){
+    const overlay = document.querySelector('.aside_overlay');
+    if(screen.width > 768 && overlay.style.display === 'flex'){
+        burgerController(HAMBURGER_PETS)
+        HEADER.classList.toggle('header_pets-inactive');
+    }
 }
 
 
 HAMBURGER_PETS.addEventListener('click', function (){
     const aside_wrapper = document.querySelector('.aside_wrapper');
-    if(HEADER.classList.contains('header_pets')){
-        HEADER.classList.toggle('header_pets-inactive');
-        aside_wrapper.style.background = '#9a9490';
-        burgerChecker(HAMBURGER_PETS);
-    }
-    else {
-        burgerChecker(HAMBURGER_PETS);
-        aside_wrapper.addEventListener('transitionend', function (){
-            HEADER.classList.toggle('header_pets');
-        })
-    }
+    burgerController(HAMBURGER_PETS)
+    aside_wrapper.style.background = '#9a9490';
+    HEADER.classList.add('header_pets-inactive');
+    aside_wrapper.addEventListener('animationend', function (animationEvent){
+        burgerSwitcher(animationEvent, aside_wrapper)
+
+    })
 });
 
 
-const moveRight = () => {
-    PAG_RIGHT.removeEventListener('click', moveRight)
-    PAG_LEFT.removeEventListener('click', moveLeft)
+const paginationRight = () => {
+    PAG_RIGHT.removeEventListener('click', paginationRight)
+    PAG_LEFT.removeEventListener('click', paginationLeft)
     current++;
     PAGE_COUNTER.innerHTML = current + 1
     PAGINATION.style.transform = `translate(-${100 * (current)}%)`;
-    console.log()
     if(current === PAGINATION.children.length - 1){
         PAG_RIGHT.disabled = true;
         PAG_LAST.disabled = true;
@@ -57,9 +60,9 @@ const moveRight = () => {
     }
 }
 
-const moveLeft = () => {
-    PAG_LEFT.removeEventListener('click', moveLeft)
-    PAG_RIGHT.removeEventListener('click', moveRight)
+const paginationLeft = () => {
+    PAG_LEFT.removeEventListener('click', paginationLeft)
+    PAG_RIGHT.removeEventListener('click', paginationRight)
     current--;
     PAGE_COUNTER.innerHTML = current + 1
     PAGINATION.style.transform = `translate(-${100 * (current)}%)`;
@@ -74,9 +77,9 @@ const moveLeft = () => {
     }
 }
 
-const moveFirst = () => {
-    PAG_LEFT.removeEventListener('click', moveLeft);
-    PAG_FIRST.removeEventListener('click', moveFirst);
+const paginationFirst = () => {
+    PAG_LEFT.removeEventListener('click', paginationLeft);
+    PAG_FIRST.removeEventListener('click', paginationFirst);
     current = 0;
     PAGINATION.style.transform = `translate(${current}%)`;
     PAGE_COUNTER.innerHTML = current + 1;
@@ -86,9 +89,9 @@ const moveFirst = () => {
     PAG_RIGHT.disabled = false;
 }
 
-const moveLast = () => {
-    PAG_LAST.removeEventListener('click', moveLast);
-    PAG_RIGHT.removeEventListener('click', moveRight)
+const paginationLast = () => {
+    PAG_LAST.removeEventListener('click', paginationLast);
+    PAG_RIGHT.removeEventListener('click', paginationRight)
     current = PAGINATION.children.length - 1;
     PAGINATION.style.transform = `translate(-${100 * (current)}%)`;
     PAGE_COUNTER.innerHTML = current + 1;
@@ -101,19 +104,19 @@ const moveLast = () => {
 
 }
 
-PAG_RIGHT.addEventListener('click', moveRight);
-PAG_LEFT.addEventListener('click', moveLeft);
+PAG_RIGHT.addEventListener('click', paginationRight);
+PAG_LEFT.addEventListener('click', paginationLeft);
 
-PAG_FIRST.addEventListener('click', moveFirst);
-PAG_LAST.addEventListener('click', moveLast);
+PAG_FIRST.addEventListener('click', paginationFirst);
+PAG_LAST.addEventListener('click', paginationLast);
 
 
 PAGINATION.addEventListener('transitionend',(event) =>{
-    PAG_RIGHT.addEventListener('click', moveRight);
-    PAG_LEFT.addEventListener('click', moveLeft);
+    PAG_RIGHT.addEventListener('click', paginationRight);
+    PAG_LEFT.addEventListener('click', paginationLeft);
 
-    PAG_FIRST.addEventListener('click', moveFirst);
-    PAG_LAST.addEventListener('click', moveLast);
+    PAG_FIRST.addEventListener('click', paginationFirst);
+    PAG_LAST.addEventListener('click', paginationLast);
 
 });
 

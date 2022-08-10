@@ -18,7 +18,7 @@
   gap: 60px;
   @include media-mobile{
     margin: 0 0 42px 0;
-    gap: 15px;
+    gap: 0;
   }
 }
 
@@ -37,8 +37,13 @@
     text-align: center;
     margin-top: 80px;
     margin-bottom: 60px;
+    @include media-tablet{
+      margin-bottom: 0;
+    }
     @include media-mobile{
       margin-top: 42px;
+      margin-bottom: 42px;
+      height: 64px;
     }
   }
 }
@@ -63,7 +68,7 @@
 
     }
     @include media-mobile{
-      margin-bottom: 31.5%;
+      margin-bottom: 114px;
     }
   }
   &_card{

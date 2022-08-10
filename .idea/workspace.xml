@@ -31,6 +31,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/sass/components/_header.scss" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -184,7 +187,7 @@
       <workItem from="1659426866663" duration="9803000" />
       <workItem from="1659447591183" duration="22715000" />
       <workItem from="1659544822545" duration="14679000" />
-      <workItem from="1659624320099" duration="35332000" />
+      <workItem from="1659624320099" duration="53646000" />
     </task>
     <servers />
   </component>

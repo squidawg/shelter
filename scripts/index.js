@@ -1,6 +1,6 @@
 import {readJSON} from "./readJSON.js";
 import {generateCardAppend} from "./generateCardAppend.js";
-import {aside, burgerChecker} from "./BurgerMenu.js";
+import {burgerMenu, burgerController, burgerSwitcher} from "./BurgerMenu.js";
 import {HEADER} from "./BurgerMenu.js";
 
 
@@ -14,21 +14,31 @@ const HAMBURGER = document.querySelector('.hamburger');
 let cardQuantity;
 let time;
 
+
 HAMBURGER.addEventListener('click', function (){
-    burgerChecker(HAMBURGER)
+    const aside_wrapper = document.querySelector('.aside_wrapper');
+    burgerController(HAMBURGER);
+    aside_wrapper.addEventListener('animationend', function (animationEvent){
+        burgerSwitcher(animationEvent, aside_wrapper)
+
+    })
 });
 
 async function init(){
     await readJSON();
     carouselGenerator();
-    aside(HAMBURGER, HEADER, 'header-inactive');
+    burgerMenu(HAMBURGER, HEADER, 'header-inactive');
 }
 
 window.onresize = function (){
+    const overlay = document.querySelector('.aside_overlay');
     clearTimeout(time);
     time = setTimeout(function (){
         carouselGenerator();
     }, 100);
+    if(screen.width > 768 && overlay.style.display === 'flex'){
+        burgerController(HAMBURGER)
+    }
 }
 
 function carouselGenerator(){

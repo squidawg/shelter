@@ -8,7 +8,7 @@
 }
 
 @mixin media-over__laptop {
-  @media (max-width: 3000px){ @content;}
+  @media (max-width: 7000px){ @content;}
 }
 
 @mixin media-laptop {
