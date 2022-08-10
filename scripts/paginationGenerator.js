@@ -15,9 +15,9 @@ window.onresize = function (){
     clearTimeout(timePets);
     timePets = setTimeout(function (){
             PAGINATION.innerHTML = ''
-            paginationGenerator()
+            paginationGenerator();
         }
-    , 100)
+    , 100);
 }
 
 export function paginationGenerator(){

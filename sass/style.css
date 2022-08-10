@@ -1971,6 +1971,10 @@ body {
   display: inline-flex;
   cursor: pointer;
 }
+.modal_close:hover {
+  background: #F1CDB3;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
 
 .list_element {
   text-transform: capitalize;
