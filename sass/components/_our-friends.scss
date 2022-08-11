@@ -1,25 +1,26 @@
-.our-friends {
+.our-friends{
   background: $color-background-pets;
-  &-bckgrnd {
-    @extend .our-friends;
-    height: 877px;
-    @include media-mobile {
-      height: 791px;
-    }
-  }
-  &_inner{
-    margin: 0 0 100px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    @include media-mobile{
-      margin: 0 0 42px 0;
-      gap: 0;
-    }
+}
+
+.our_friends-bckgrnd{
+  background: $color-background-pets;
+  height: 877px;
+  @include media-mobile{
+    height: 791px;
   }
 }
 
+.our-friends_inner{
+  margin: 0 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  @include media-mobile{
+    margin: 0 0 42px 0;
+    gap: 0;
+  }
+}
 
 .section_title{
     margin: 0;

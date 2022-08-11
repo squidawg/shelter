@@ -1189,17 +1189,20 @@ body {
   align-items: center;
 }
 
-.our-friends, .our-friends-bckgrnd {
+.our-friends {
   background: #F6F6F6;
 }
-.our-friends-bckgrnd {
+
+.our_friends-bckgrnd {
+  background: #F6F6F6;
   height: 877px;
 }
 @media (max-width: 766px) {
-  .our-friends-bckgrnd {
+  .our_friends-bckgrnd {
     height: 791px;
   }
 }
+
 .our-friends_inner {
   margin: 0 0 100px 0;
   display: flex;
