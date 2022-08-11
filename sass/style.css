@@ -630,10 +630,6 @@ body {
   overflow-x: hidden;
 }
 
-:root {
-  --burger-pets: #9a9490 ;
-}
-
 .left_cards, .right_cards, .active_cards {
   display: flex;
   flex-direction: row;
@@ -899,6 +895,8 @@ body {
   position: absolute;
   right: -320px;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 .aside_overlay {
   width: calc(100% - 320px);
@@ -933,7 +931,6 @@ body {
 .burger_closed {
   transform: rotate(0deg);
 }
-
 .burger_open {
   transform: rotate(-90deg);
 }
@@ -1192,20 +1189,17 @@ body {
   align-items: center;
 }
 
-.our-friends {
+.our-friends, .our-friends-bckgrnd {
   background: #F6F6F6;
 }
-
-.our_friends-bckgrnd {
-  background: #F6F6F6;
+.our-friends-bckgrnd {
   height: 877px;
 }
 @media (max-width: 766px) {
-  .our_friends-bckgrnd {
+  .our-friends-bckgrnd {
     height: 791px;
   }
 }
-
 .our-friends_inner {
   margin: 0 0 100px 0;
   display: flex;

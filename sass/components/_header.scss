@@ -187,6 +187,8 @@
       position: absolute;
       right: -320px;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
       //transition-duration: 0.6s;
     }
     &_overlay{
@@ -224,53 +226,54 @@
   }
 
 
-  .burger_closed{
+.burger{
+  &_closed {
     transform: rotate(0deg);
   }
-
-  .burger_open{
+  &_open {
     transform: rotate(-90deg);
   }
+}
 
 
 
-  @keyframes overlay-opacityFadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
+@keyframes overlay-opacityFadeIn {
+  0% {
+    opacity: 0;
   }
 
-  .opacity-fadeIn{
-    animation-name: overlay-opacityFadeIn;
-    animation-duration: 1s;
+  100% {
+    opacity: 1;
   }
+}
+
+.opacity-fadeIn{
+  animation-name: overlay-opacityFadeIn;
+  animation-duration: 1s;
+}
 
 
 
-  @keyframes transition-open {
-    from {right: -320px
-    }
-    to {right: 0
-    }
+@keyframes transition-open {
+  from {right: -320px
   }
-
-  @keyframes transition-close {
-    from {right: 0
-    }
-    to {right: -320px
-    }
+  to {right: 0
   }
+}
 
-  .transition-open-animation{
-    animation-name: transition-open;
-    animation-duration: 0.3s;
+@keyframes transition-close {
+  from {right: 0
   }
+  to {right: -320px
+  }
+}
 
-  .transition-close-animation{
-    animation-name: transition-close;
-    animation-duration: 0.3s;
-  }
+.transition-open-animation{
+  animation-name: transition-open;
+  animation-duration: 0.3s;
+}
+
+.transition-close-animation{
+  animation-name: transition-close;
+  animation-duration: 0.3s;
+}

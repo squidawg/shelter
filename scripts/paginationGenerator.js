@@ -28,5 +28,4 @@ export function paginationGenerator(){
     page.forEach((element) =>{
         generateCardAppend(element, cardQuantity, cardQuantity );
     });
-
 }

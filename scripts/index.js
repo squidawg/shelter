@@ -1,7 +1,7 @@
 import {readJSON} from "./readJSON.js";
 import {generateCardAppend} from "./generateCardAppend.js";
-import {burgerMenu, burgerController, burgerSwitcher} from "./BurgerMenu.js";
-import {HEADER} from "./BurgerMenu.js";
+import {burgerGenerator, burgerController, burgerPositionSwitch} from "./burgerGenerator.js";
+import {HEADER} from "./burgerGenerator.js";
 
 
 const BTN_LEFT = document.querySelector("#btn_left");
@@ -19,7 +19,7 @@ HAMBURGER.addEventListener('click', function (){
     const aside_wrapper = document.querySelector('.aside_wrapper');
     burgerController(HAMBURGER);
     aside_wrapper.addEventListener('animationend', function (animationEvent){
-        burgerSwitcher(animationEvent, aside_wrapper)
+        burgerPositionSwitch(animationEvent, aside_wrapper)
 
     })
 });
@@ -27,7 +27,7 @@ HAMBURGER.addEventListener('click', function (){
 async function init(){
     await readJSON();
     carouselGenerator();
-    burgerMenu(HAMBURGER, HEADER, 'header-inactive');
+    burgerGenerator(HAMBURGER, HEADER, 'header-inactive');
 }
 
 window.onresize = function (){

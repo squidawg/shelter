@@ -1,7 +1,7 @@
 import {readJSON} from "./readJSON.js";
 import {paginationGenerator} from "./paginationGenerator.js";
-import {burgerMenu, burgerController, burgerSwitcher} from "./BurgerMenu.js";
-import {HEADER} from "./BurgerMenu.js";
+import {burgerGenerator, burgerController, burgerPositionSwitch} from "./burgerGenerator.js";
+import {HEADER} from "./burgerGenerator.js";
 
 export const PAGINATION = document.querySelector('.pagination_box');
 const PAG_FIRST = document.querySelector('#pagination_first');
@@ -16,14 +16,14 @@ let current = 0;
 async function init_pets(){
     await readJSON();
     paginationGenerator();
-    burgerMenu(HAMBURGER_PETS, HEADER,  'header_pets-inactive');
+    burgerGenerator(HAMBURGER_PETS, HEADER,  'header_pets-inactive');
     PAG_LEFT.disabled = true;
     PAG_FIRST.disabled = true;
 }
 window.onresize = function (){
     const overlay = document.querySelector('.aside_overlay');
     if(screen.width > 768 && overlay.style.display === 'flex'){
-        burgerController(HAMBURGER_PETS)
+        burgerController(HAMBURGER_PETS);
         HEADER.classList.toggle('header_pets-inactive');
     }
 }
@@ -31,21 +31,21 @@ window.onresize = function (){
 
 HAMBURGER_PETS.addEventListener('click', function (){
     const aside_wrapper = document.querySelector('.aside_wrapper');
-    burgerController(HAMBURGER_PETS)
+    burgerController(HAMBURGER_PETS);
     aside_wrapper.style.background = '#9a9490';
     HEADER.classList.add('header_pets-inactive');
     aside_wrapper.addEventListener('animationend', function (animationEvent){
-        burgerSwitcher(animationEvent, aside_wrapper)
+        burgerPositionSwitch(animationEvent, aside_wrapper);
 
     })
 });
 
 
 const paginationRight = () => {
-    PAG_RIGHT.removeEventListener('click', paginationRight)
-    PAG_LEFT.removeEventListener('click', paginationLeft)
+    PAG_RIGHT.removeEventListener('click', paginationRight);
+    PAG_LEFT.removeEventListener('click', paginationLeft);
     current++;
-    PAGE_COUNTER.innerHTML = current + 1
+    PAGE_COUNTER.innerHTML = current + 1;
     PAGINATION.style.transform = `translate(-${100 * (current)}%)`;
     if(current === PAGINATION.children.length - 1){
         PAG_RIGHT.disabled = true;
@@ -61,18 +61,18 @@ const paginationRight = () => {
 }
 
 const paginationLeft = () => {
-    PAG_LEFT.removeEventListener('click', paginationLeft)
-    PAG_RIGHT.removeEventListener('click', paginationRight)
+    PAG_LEFT.removeEventListener('click', paginationLeft);
+    PAG_RIGHT.removeEventListener('click', paginationRight);
     current--;
-    PAGE_COUNTER.innerHTML = current + 1
+    PAGE_COUNTER.innerHTML = current + 1;
     PAGINATION.style.transform = `translate(-${100 * (current)}%)`;
     if(current === 0){
-        PAG_LEFT.disabled = true
+        PAG_LEFT.disabled = true;
         PAG_FIRST.disabled = true;
     }
     else {
-        PAG_LEFT.disabled = false
-        PAG_RIGHT.disabled = false
+        PAG_LEFT.disabled = false;
+        PAG_RIGHT.disabled = false;
         PAG_LAST.disabled = false;
     }
 }
@@ -91,7 +91,7 @@ const paginationFirst = () => {
 
 const paginationLast = () => {
     PAG_LAST.removeEventListener('click', paginationLast);
-    PAG_RIGHT.removeEventListener('click', paginationRight)
+    PAG_RIGHT.removeEventListener('click', paginationRight);
     current = PAGINATION.children.length - 1;
     PAGINATION.style.transform = `translate(-${100 * (current)}%)`;
     PAGE_COUNTER.innerHTML = current + 1;
@@ -99,7 +99,7 @@ const paginationLast = () => {
     PAG_LAST.disabled = true;
     PAG_RIGHT.disabled = true;
 
-    PAG_LEFT.disabled = false
+    PAG_LEFT.disabled = false;
     PAG_FIRST.disabled = false;
 
 }

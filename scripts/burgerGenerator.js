@@ -5,7 +5,7 @@ const BODY = document.querySelector('body');
 const LOGO = document.querySelector('.logo');
 export const HEADER = document.querySelector('.header');
 
-export const burgerSwitcher = (animationEvent, aside_wrapper) => {
+export const burgerPositionSwitch = (animationEvent, aside_wrapper) => {
     if(animationEvent.animationName === 'transition-open'){
 
         aside_wrapper.style.right = '0'
@@ -16,7 +16,7 @@ export const burgerSwitcher = (animationEvent, aside_wrapper) => {
     }
 }
 
-export function burgerMenu(elem, toggler, classLName){
+export function burgerGenerator(elem, toggler, classLName){
     const overlay = createElement('div', 'aside_overlay');
     const wrapper = createElement('div', 'aside_wrapper');
     const burgerInner = createElement('div', 'aside_inner');
