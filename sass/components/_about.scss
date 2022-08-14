@@ -9,7 +9,6 @@
     margin-top: 42px;
     margin-bottom: 42.4px;
   }
-
   &_pets{
     height: 408px;
     display: flex;
@@ -53,7 +52,6 @@
       width: 270px;
       padding-top: 22px;
     }
-
   }
   &_image{
     @include media-tablet{
@@ -65,18 +63,15 @@
       margin-left: 20px;
       width: 260px;
       height: 353.6px;
-
     }
   }
 }
-
 .section_container{
   width: 370px;
   @include media-mobile{
     width: 280px;
   }
 }
-
 .pets_inner{
   display: flex;
   flex-direction: column;

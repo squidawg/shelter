@@ -625,11 +625,6 @@ template {
   }
 }
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
 .left_cards, .right_cards, .active_cards {
   display: flex;
   flex-direction: row;
@@ -1701,17 +1696,17 @@ body {
     justify-content: center;
   }
 }
-.footer_layout {
+.footer-image-wrapper {
   height: 310px;
 }
 @media (max-width: 1200px) {
-  .footer_layout {
+  .footer-image-wrapper {
     display: flex;
     justify-content: center;
   }
 }
 @media (max-width: 766px) {
-  .footer_layout {
+  .footer-image-wrapper {
     width: 260px;
     height: 269px;
     margin: auto;
@@ -1775,6 +1770,13 @@ body {
 .wrapper {
   max-width: 1280px;
   margin: auto;
+}
+
+.overflow-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .margin {

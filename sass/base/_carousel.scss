@@ -36,8 +36,6 @@
   from {right: -990px}
   to {left: -1980px}
 }
-
-
 .transition-right{
   animation-name: move-right;
   animation-duration: 1s;
@@ -47,14 +45,11 @@
   @include media-mobile{
     animation-name: move-right-mobile;
   }
-
 }
-
 .transition-left{
   animation-name: move-left;
   animation-duration: 1s;
 }
-
 .carousel{
   width: 990px;
   @include media-laptop{

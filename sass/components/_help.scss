@@ -11,7 +11,6 @@
     gap: 42px;
   }
 }
-
 .grid{
   display: flex;
   flex-wrap: wrap;
@@ -27,10 +26,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
-
-
-
-
   &_element{
     display: flex;
     flex-direction: column;
@@ -45,7 +40,6 @@
     @include media-mobile{
       gap: 10px;
     }
-
     &:nth-child(5){
       margin-right: 0;
     }

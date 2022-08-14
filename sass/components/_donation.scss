@@ -12,7 +12,6 @@
     padding-bottom: 42px;
     height: 458px;
   }
-
   &_layout{
     background: $color-background-pets;
   }
@@ -30,7 +29,6 @@
       justify-content: space-between;
     }
   }
-
   &_card{
     display: flex;
     flex-direction: row;
@@ -43,8 +41,6 @@
       width: 251px;
       height: 23px;
     }
-
-
   }
   &_link{
     display: flex;
@@ -55,7 +51,6 @@
       align-items: center;
     }
   }
-
   &_subtitle{
     @extend %font-georgia;
     @include font(15px, 16.5px, $letter-spacing: 0.06em);
@@ -67,7 +62,6 @@
       letter-spacing: 0;
     }
   }
-
   &_text{
     @extend %font-arial;
     @include font(12px, 18px, $style: italic);
@@ -79,10 +73,8 @@
     @include media-mobile{
       width: 280px;
       text-align: justify;
-
     }
   }
-
   &_promo{
     display: flex;
     flex-direction: column;
@@ -97,7 +89,6 @@
       gap: 23px;
     }
   }
-
   &_image{
     padding-top: 11px;
     padding-bottom: 10px;
@@ -115,8 +106,6 @@
     }
   }
 }
-
-
 .card_number{
   @extend %font-georgia;
   @include font(20px, 23px, $letter-spacing: 0.06em);

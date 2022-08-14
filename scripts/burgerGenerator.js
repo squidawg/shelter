@@ -1,8 +1,8 @@
 import {createElement} from "./createElement.js";
 
 const NAVIGATION_LINK = document.querySelectorAll('.navigation_element');
-const BODY = document.querySelector('body');
 const LOGO = document.querySelector('.logo');
+const OVERFLOW_WRAPPER = document.getElementById('overflow-wrapper');
 export const HEADER = document.querySelector('.header');
 
 export const burgerPositionSwitch = (animationEvent, aside_wrapper) => {
@@ -11,6 +11,7 @@ export const burgerPositionSwitch = (animationEvent, aside_wrapper) => {
         aside_wrapper.style.right = '0'
     }
     else {
+
         aside_wrapper.style.right = '-320px'
         HEADER.classList.remove('header_pets-inactive');
     }
@@ -27,7 +28,7 @@ export function burgerGenerator(elem, toggler, classLName){
         overlay.classList.toggle('opacity-fadeIn');
         toggler.classList.toggle(classLName);
         overlay.style.display = 'none';
-        BODY.style.overflowY = 'initial';
+        OVERFLOW_WRAPPER.style.overflowY = 'initial';
         LOGO.style.visibility = 'visible';
     })
     NAVIGATION_LINK.forEach((element)=>{
@@ -37,22 +38,22 @@ export function burgerGenerator(elem, toggler, classLName){
             overlay.classList.toggle('opacity-fadeIn');
             toggler.classList.toggle(classLName);
             overlay.style.display = 'none';
-            BODY.style.overflowY = 'initial';
+            OVERFLOW_WRAPPER.style.overflowY = 'initial';
             LOGO.style.visibility = 'visible';
         });
         burgerLinks.append(listElement);
     });
     burgerInner.append(burgerLogo);
     wrapper.append(burgerInner, burgerLinks);
-    BODY.insertBefore(wrapper,  BODY.children[0]);
-    BODY.insertBefore(overlay,  BODY.children[0]);
+    OVERFLOW_WRAPPER.insertBefore(wrapper,  OVERFLOW_WRAPPER.children[0]);
+    OVERFLOW_WRAPPER.insertBefore(overlay,  OVERFLOW_WRAPPER.children[0]);
 
 
 }
 
 
 const burgerOpen = (element, translate) => {
-    window.scrollTo(0, 0);
+    OVERFLOW_WRAPPER.scrollTop = 0;
     element.classList.toggle('burger_open');
     element.classList.remove('burger_closed');
     translate.classList.add('transition-open-animation');
@@ -73,14 +74,14 @@ export function burgerController(element){
         burgerOpen(element, wrapper);
         overlay.style.display = 'flex';
         overlay.classList.add('opacity-fadeIn');
-        BODY.style.overflowY = 'hidden';
+        OVERFLOW_WRAPPER.style.overflowY = 'hidden';
         LOGO.style.visibility = 'hidden';
     }
     else {
         burgerClose(element, wrapper);
         overlay.classList.remove('opacity-fadeIn');
         overlay.style.display = 'none';
-        BODY.style.overflowY = 'initial';
+        OVERFLOW_WRAPPER.style.overflowY = 'initial';
         LOGO.style.visibility = 'visible';
     }
 

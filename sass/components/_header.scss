@@ -10,7 +10,6 @@
     height: 823px;
   }
 }
-
 .header {
   &_inner{
     padding-top: 60px;
@@ -26,16 +25,12 @@
     top: 0;
     z-index: 10;
     background: $color-background-h2;
-
     &-inactive {
       @extend .header_pets;
       position: initial;
     }
   }
 }
-
-
-
 .navigation{
   &_inner {
     padding: 0;
@@ -59,18 +54,13 @@
     &-active{
       @extend .navigation_link;
       color: $color-light;
-
     }
-
-
   }
 }
-
 .active{
   border-bottom: 3px solid;
   color: $color-primary;
 }
-
 .logo{
   &_title{
     @extend %font-georgia;
@@ -85,31 +75,22 @@
     color: $color-background-h2;
     margin: 0;
     text-align: center;
-
   }
-
   &_link{
     text-decoration: none;
   }
 }
-
-
 .pets {
   &_subtitle {
     color: $color-button;
   }
-
   &_title {
     color: $color-heading;
-
     &:hover {
       color: $color-button;
-
     }
   }
 }
-
-
   %hamburger-line{
     content: "";
     display: inline-block;
@@ -123,8 +104,6 @@
       color: $color-heading__modal;
     }
   }
-
-
   .hamburger__line {
     @extend %hamburger-line;
     top: calc(50% - 1px);
@@ -133,11 +112,7 @@
       @extend .hamburger__line;
       @extend %hamburger-line-pets;
     }
-
   }
-
-
-
   .hamburger{
     display: flex;
     right: 53px;
@@ -177,7 +152,6 @@
       }
     }
   }
-
   //burger menu
   .aside{
     &_wrapper{
@@ -199,13 +173,11 @@
       flex-direction: row-reverse;
       display: none;
       z-index: 1;
-
     }
     &_inner{
       margin-left: 10px;
       margin-top: 30px;
       display: flex;
-
     }
     &_list{
       margin: auto;
@@ -224,8 +196,6 @@
       }
     }
   }
-
-
 .burger{
   &_closed {
     transform: rotate(0deg);
@@ -234,9 +204,6 @@
     transform: rotate(-90deg);
   }
 }
-
-
-
 @keyframes overlay-opacityFadeIn {
   0% {
     opacity: 0;
@@ -246,33 +213,26 @@
     opacity: 1;
   }
 }
-
 .opacity-fadeIn{
   animation-name: overlay-opacityFadeIn;
   animation-duration: 1s;
 }
-
-
-
 @keyframes transition-open {
   from {right: -320px
   }
   to {right: 0
   }
 }
-
 @keyframes transition-close {
   from {right: 0
   }
   to {right: -320px
   }
 }
-
 .transition-open-animation{
   animation-name: transition-open;
   animation-duration: 0.3s;
 }
-
 .transition-close-animation{
   animation-name: transition-close;
   animation-duration: 0.3s;

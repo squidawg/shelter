@@ -3,7 +3,6 @@
   background-position: center;
   background-size: cover;
 }
-
 .footer{
   display: flex;
   flex-direction: row;
@@ -33,7 +32,7 @@
       justify-content: center;
     }
   }
-  &_layout{
+  &-image-wrapper{
     height: 310px;
     @include media-tablet{
       display: flex;
@@ -52,13 +51,11 @@
     }
   }
 }
-
 .section_name{
   @extend .section_title;
   color: $color-background-h2;
   max-width: 280px;
 }
-
 .contacts{
   display: flex;
   flex-direction: column;
@@ -74,7 +71,6 @@
   &_link{
     @extend .contacts_inner;
     text-decoration: none;
-
   }
   &_subtitle{
     @extend %font-georgia;
@@ -84,7 +80,6 @@
     margin: 0;;
   }
 }
-
 .left{
   gap: 40px;
 }
@@ -93,6 +88,5 @@
   @include media-mobile{
     gap: 40px;
     margin-left: 20px;
-
   }
 }

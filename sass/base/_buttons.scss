@@ -5,11 +5,9 @@
   border-radius: 100px;
   cursor: pointer;
   @extend %transition;
-
   &_bordered {
     background: $color-light;
     border: 2px solid $color-primary;
-
     &:hover{
       background: $color-primary;
     }
@@ -20,11 +18,9 @@
     border: none;
     &:hover{
       background: $color-primary-light;
-
     }
   }
 }
-
 .arrow {
   @extend %transition;
   @extend %font-georgia;
@@ -35,7 +31,6 @@
   display: flex;
   height: 52px;
   width: 52px;
-
   &_bordered {
     @extend .arrow;
     justify-content: center;
@@ -43,14 +38,12 @@
     background: $color-light;
     border: 2px solid $color-primary;
     align-items: center;
-
     &:hover {
       background: $color-primary-light;
       border: 2px solid $color-primary-light;
     }
   }
 }
-
 .prev{
   display: flex;
   align-items: center;
@@ -59,9 +52,7 @@
     top: 104%;
     left: 16%;
   }
-
 }
-
 .next{
   display: flex;
   align-items: center;

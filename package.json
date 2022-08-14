@@ -1,7 +1,6 @@
 {
   "name": "shelter",
   "version": "1.0.0",
-  "description": "",
   "main": "scripts/index.js",
   "scripts": {
     "style": "sass --watch sass/style.scss sass/style.css",
@@ -19,5 +18,8 @@
   "homepage": "https://github.com/squidawg/shelter#readme",
   "dependencies": {
     "normalize-scss": "^7.0.1"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }

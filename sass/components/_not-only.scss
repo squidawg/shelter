@@ -12,7 +12,6 @@
     align-items: center;
   }
 }
-
 .promo{
   margin-left: 40px;
   display: flex;
@@ -55,7 +54,6 @@
       width: 300px;
       text-align: center;
     }
-
   }
   &_image{
     height: 728px;
@@ -81,11 +79,9 @@
       width: 260px;
       height: 271.77px;
     }
-
   }
   &__button{
     @include media-tablet{
-
     }
   }
 }
