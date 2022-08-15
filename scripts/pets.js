@@ -4,12 +4,12 @@ import {burgerGenerator, burgerController, burgerPositionSwitch} from "./burgerG
 import {HEADER} from "./burgerGenerator.js";
 
 export const PAGINATION = document.querySelector('.pagination_box');
-const PAG_FIRST = document.querySelector('#pagination_first');
-const PAG_LAST = document.querySelector('#pagination_last');
-const PAG_RIGHT = document.querySelector('#pagination_right');
-const PAG_LEFT = document.querySelector('#pagination_left');
+const PAG_FIRST = document.getElementById('pagination_first');
+const PAG_LAST = document.getElementById('pagination_last');
+const PAG_RIGHT = document.getElementById('pagination_right');
+const PAG_LEFT = document.getElementById('pagination_left');
 const HAMBURGER_PETS = document.querySelector('.hamburger-pets');
-const PAGE_COUNTER = document.querySelector('#page_counter');
+const PAGE_COUNTER = document.getElementById('page_counter');
 
 let current = 0;
 
@@ -28,7 +28,6 @@ window.onresize = function (){
     }
 }
 
-
 HAMBURGER_PETS.addEventListener('click', function (){
     const aside_wrapper = document.querySelector('.aside_wrapper');
     burgerController(HAMBURGER_PETS);
@@ -40,7 +39,6 @@ HAMBURGER_PETS.addEventListener('click', function (){
     })
 });
 
-
 const paginationRight = () => {
     PAG_RIGHT.removeEventListener('click', paginationRight);
     PAG_LEFT.removeEventListener('click', paginationLeft);
@@ -51,6 +49,7 @@ const paginationRight = () => {
         PAG_RIGHT.disabled = true;
         PAG_LAST.disabled = true;
     }
+
     else {
         PAG_RIGHT.disabled = false;
         PAG_LEFT.disabled = false;
@@ -70,6 +69,7 @@ const paginationLeft = () => {
         PAG_LEFT.disabled = true;
         PAG_FIRST.disabled = true;
     }
+
     else {
         PAG_LEFT.disabled = false;
         PAG_RIGHT.disabled = false;
@@ -101,7 +101,6 @@ const paginationLast = () => {
 
     PAG_LEFT.disabled = false;
     PAG_FIRST.disabled = false;
-
 }
 
 PAG_RIGHT.addEventListener('click', paginationRight);
@@ -109,7 +108,6 @@ PAG_LEFT.addEventListener('click', paginationLeft);
 
 PAG_FIRST.addEventListener('click', paginationFirst);
 PAG_LAST.addEventListener('click', paginationLast);
-
 
 PAGINATION.addEventListener('transitionend',(event) =>{
     PAG_RIGHT.addEventListener('click', paginationRight);

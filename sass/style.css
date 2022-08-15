@@ -546,6 +546,7 @@ template {
   padding: 15px 45px 15px 45px;
   border-radius: 100px;
   cursor: pointer;
+  color: #292929 !important;
 }
 .button_bordered {
   background: #FAFAFA;

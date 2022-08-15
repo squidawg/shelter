@@ -56,7 +56,6 @@ export class Modal {
         document.body.append(this.overlay);
         document.body.style.overflowY = 'hidden';
         document.querySelector('.header').classList.add('header_pets-inactive')
-
     }
 
     closeModal(e) {
@@ -65,9 +64,6 @@ export class Modal {
             document.querySelector('.overlay').remove();
             document.body.style.overflowY = 'initial';
             document.querySelector('.header').classList.remove('header_pets-inactive')
-
         }
-
-
     }
 }

@@ -4,6 +4,7 @@
   padding: 15px 45px 15px 45px;
   border-radius: 100px;
   cursor: pointer;
+  color: $color-button !important;
   @extend %transition;
   &_bordered {
     background: $color-light;

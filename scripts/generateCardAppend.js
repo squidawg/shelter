@@ -15,7 +15,6 @@ export function generateCardAppend(switchedItem, cardQuantity, outputCount = 3) 
         let inoculations = cards[numbers[i]].inoculations;
         let diseases = cards[numbers[i]].diseases;
         let parasites = cards[numbers[i]].parasites;
-
         let card = createCardTemplate(name, img, type, breed, description, age, inoculations, diseases, parasites);
         switchedItem.append(card);
     }

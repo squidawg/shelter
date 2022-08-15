@@ -4,8 +4,8 @@ import {burgerGenerator, burgerController, burgerPositionSwitch} from "./burgerG
 import {HEADER} from "./burgerGenerator.js";
 
 
-const BTN_LEFT = document.querySelector("#btn_left");
-const BTN_RIGHT = document.querySelector("#btn_right");
+const BTN_LEFT = document.getElementById("btn_left");
+const BTN_RIGHT = document.getElementById("btn_right");
 const CAROUSEL = document.querySelector(".carousel");
 const ITEM_LEFT = document.querySelector(".left_cards");
 const ITEM_RIGHT = document.querySelector(".right_cards");
@@ -51,7 +51,6 @@ function carouselGenerator(){
     });
 }
 
-
 const moveLeft = () => {
     CAROUSEL.classList.add("transition-left");
     BTN_LEFT.removeEventListener("click", moveLeft);
@@ -72,25 +71,22 @@ CAROUSEL.addEventListener('animationend', (animationEvent) => {
     if (animationEvent.animationName === "move-left") {
         CAROUSEL.classList.remove("transition-left");
         switchedItem = ITEM_LEFT;
-
     }
+
     else {
         CAROUSEL.classList.remove("transition-right");
         switchedItem = ITEM_RIGHT;
     }
 
-    document.querySelector("#active_cards").innerHTML = "";
+    document.getElementById("active_cards").innerHTML = "";
     while (switchedItem.childNodes.length > 0) {
-        document.querySelector("#active_cards").append(switchedItem.childNodes[0]);
+        document.getElementById("active_cards").append(switchedItem.childNodes[0]);
     }
 
     generateCardAppend(switchedItem, cardQuantity);
 
-
     BTN_LEFT.addEventListener("click", moveLeft);
     BTN_RIGHT.addEventListener("click", moveRight);
 });
-
-
 
 init();
