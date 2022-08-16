@@ -14,13 +14,11 @@ const HAMBURGER = document.querySelector('.hamburger');
 let cardQuantity;
 let time;
 
-
 HAMBURGER.addEventListener('click', function (){
     const aside_wrapper = document.querySelector('.aside_wrapper');
     burgerController(HAMBURGER);
     aside_wrapper.addEventListener('animationend', function (animationEvent){
         burgerPositionSwitch(animationEvent, aside_wrapper)
-
     })
 });
 

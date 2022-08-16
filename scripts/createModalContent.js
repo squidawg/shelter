@@ -1,5 +1,6 @@
 import {createElement} from "./createElement.js";
 import {cards} from "./readJSON.js";
+import {Modal} from "./Modal.js";
 
 export const createModalContent = (...element) => {
 
@@ -7,6 +8,7 @@ export const createModalContent = (...element) => {
     const modal_content_text = createElement('div', "modal_content-text");
     const modal_list = createElement('ul',"modal_content-list" )
     const modal_content_wrapper = createElement("div", 'modal_content_wrapper');
+    const modal = new Modal('tools-modal');
 
     const img = document.createElement("img");
     img.src =  element[1];
@@ -31,6 +33,5 @@ export const createModalContent = (...element) => {
     modal_content_text.append(petName, petBreed);
     modal_content_wrapper.append(modal_content_text, petDescription, modal_list);
     modal_content.append(img, modal_content_wrapper);
-
-    return modal_content;
+    modal.buildModal(modal_content);
 }

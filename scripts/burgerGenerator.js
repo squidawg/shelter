@@ -51,10 +51,9 @@ export function burgerGenerator(elem, toggler, classLName){
 
 }
 
-
 const burgerOpen = (element, translate) => {
     OVERFLOW_WRAPPER.scrollTop = 0;
-    element.classList.toggle('burger_open');
+    element.classList.add('burger_open');
     element.classList.remove('burger_closed');
     translate.classList.add('transition-open-animation');
     translate.classList.remove('transition-close-animation');
