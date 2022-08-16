@@ -1,3 +1,3 @@
 # shelter
 
-https://squidawg.github.io/shelter/index.html
+https://squidawg.github.io/shelter/pages/index.html
