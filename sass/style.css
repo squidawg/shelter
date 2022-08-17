@@ -1418,7 +1418,7 @@ template {
   grid-template-columns: repeat(10, 1fr);
   justify-content: center;
   gap: 55px 120px;
-  margin: 0 127px 0 127px;
+  margin: 0 127px;
 }
 @media (max-width: 1279px) {
   .grid {
