@@ -24,7 +24,7 @@ export function burgerGenerator(elem, toggler, classLName){
     wrapper.id = 'aside_wrapper'
     const burgerInner = createElement('div', 'aside_inner');
     const burgerLinks = createElement('ul', 'aside_list');
-    let burgerLogo = LOGO.cloneNode(true);
+    const burgerLogo = LOGO.cloneNode(true);
     overlay.addEventListener('click', function (){
         burgerClose(elem, wrapper);
         overlay.classList.toggle('opacity-fadeIn');
@@ -32,7 +32,8 @@ export function burgerGenerator(elem, toggler, classLName){
         overlay.style.display = 'none';
         OVERFLOW_WRAPPER.style.overflowY = 'initial';
         LOGO.style.visibility = 'visible';
-    })
+    });
+
     NAVIGATION_LINK.forEach((element)=>{
         let listElement = element.cloneNode(true);
         listElement.addEventListener('click', function (){

@@ -24,7 +24,6 @@
       width: 271px;
       height: 393px;
     }
-
   }
 
   &_content{
@@ -41,6 +40,7 @@
       width: 240px;
       height: 341px;
     }
+
     &_wrapper{
       display: flex;
       flex-direction: column;
@@ -52,6 +52,7 @@
         align-items: center;
       }
     }
+
     &-text{
       margin-top: 50px;
       @include media-laptop{
@@ -73,6 +74,7 @@
         justify-content: center;
       }
     }
+
     &-pet-image{
       width: 500px;
       height: 500px;
@@ -85,11 +87,12 @@
         display: none;
       }
     }
+
     &-name{
       @extend .section_title;
       color: $color-heading__modal;
-
     }
+
     &-breed{
       @extend .carousel_title;
       text-align: left;
@@ -98,6 +101,7 @@
         text-align: center;
       }
     }
+
     &-description{
       @extend %font-georgia;
       @include font(15px, 110%, $letter-spacing: 0.06em);
@@ -113,6 +117,7 @@
         width: 220px;
       }
     }
+
     &-list{
       list-style: none;
       margin: 0;
@@ -123,8 +128,6 @@
       @include media-mobile{
         gap: 6px;
       }
-
-
     }
   }
 
@@ -150,6 +153,7 @@
       display: inline-flex;
       cursor: pointer;
     }
+
     &:hover{
       background: $color-primary;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -160,13 +164,12 @@
 .list_element{
   @extend .modal_content-description;
   text-transform: capitalize;
+
   &:before{
     content: "\2022";
     color: $color-primary;
     font-weight: bold;
     display: inline-block;
     width: 1em;
-
   }
-
 }
