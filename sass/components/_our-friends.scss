@@ -33,9 +33,7 @@
     text-align: center;
     margin-top: 80px;
     margin-bottom: 60px;
-    @include media-tablet{
-      margin-bottom: 0;
-    }
+
     @include media-mobile{
       margin-top: 42px;
       margin-bottom: 42px;
@@ -63,7 +61,6 @@
     margin-bottom: 60px;
     @include media-tablet{
       gap: 12px;
-      margin-bottom: 0;
     }
     @include media-mobile{
       margin-bottom: 114px;

@@ -22,12 +22,13 @@
   margin: 0 127px 0 127px;
 
   @include media-tablet{
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 55px 60px;
     margin: 0;
   }
 
   @include media-mobile{
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 
   }
