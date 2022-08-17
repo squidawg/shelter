@@ -3,12 +3,13 @@ import {createElement} from "./createElement.js";
 export class Modal {
     constructor(classes) {
         this.classes = classes;
-        this.modalWrapper = '';
-        this.modalContent = '';
-        this.modalCloseBtn = '';
-        this.overlay = '';
-        this.CloseBtnInner = '';
     }
+
+    modalWrapper = '';
+    modalContent = '';
+    modalCloseBtn = '';
+    overlay = '';
+    CloseBtnInner = '';
 
     buildModal(content) {
         this.overlay = createElement( 'div', 'overlay');
@@ -20,7 +21,7 @@ export class Modal {
 
         this.modalContent = createElement('div', 'modal_content');
 
-        this.setContent(content);
+        this.setContent(content, this.modalContent);
 
         this.appendModalElements();
 
@@ -29,12 +30,12 @@ export class Modal {
         this.openModal();
     }
 
-    setContent(content) {
+    setContent(content, modalContent) {
         if (typeof content === 'string') {
-            this.modalContent.innerHTML = content;
+            modalContent.innerHTML = content;
         } else {
-            this.modalContent.innerHTML = '';
-            this.modalContent.appendChild(content);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(content);
         }
     }
 
