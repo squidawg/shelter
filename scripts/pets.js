@@ -3,28 +3,30 @@ import {paginationGenerator} from "./paginationGenerator.js";
 import {burgerGenerator, burgerController, burgerPositionSwitch} from "./burgerGenerator.js";
 import {HEADER} from "./burgerGenerator.js";
 
-export const PAGINATION = document.querySelector('.pagination_box');
+export const PAGINATION = document.getElementById('pagination_box');
 const PAG_FIRST = document.getElementById('pagination_first');
 const PAG_LAST = document.getElementById('pagination_last');
 const PAG_RIGHT = document.getElementById('pagination_right');
 const PAG_LEFT = document.getElementById('pagination_left');
-const HAMBURGER_PETS = document.querySelector('.hamburger-pets');
+const HAMBURGER_PETS = document.getElementById('hamburger-pets');
 const PAGE_COUNTER = document.getElementById('page_counter');
 
+const header_pets_inactive = 'header_pets-inactive';
 let current = 0;
 
 async function init_pets(){
     await readJSON();
     paginationGenerator();
-    burgerGenerator(HAMBURGER_PETS, HEADER,  'header_pets-inactive');
+    burgerGenerator(HAMBURGER_PETS, HEADER,  header_pets_inactive);
     PAG_LEFT.disabled = true;
     PAG_FIRST.disabled = true;
 }
+
 window.onresize = function (){
     const overlay = document.querySelector('.aside_overlay');
     if(screen.width > 768 && overlay.style.display === 'flex'){
         burgerController(HAMBURGER_PETS);
-        HEADER.classList.toggle('header_pets-inactive');
+        HEADER.classList.toggle(header_pets_inactive);
     }
 }
 
@@ -32,10 +34,9 @@ HAMBURGER_PETS.addEventListener('click', function (){
     const aside_wrapper = document.querySelector('.aside_wrapper');
     burgerController(HAMBURGER_PETS);
     aside_wrapper.style.background = '#9a9490';
-    HEADER.classList.add('header_pets-inactive');
+    HEADER.classList.add(header_pets_inactive);
     aside_wrapper.addEventListener('animationend', function (animationEvent){
         burgerPositionSwitch(animationEvent, aside_wrapper);
-
     })
 });
 

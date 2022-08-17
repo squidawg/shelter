@@ -546,7 +546,7 @@ template {
   padding: 15px 45px 15px 45px;
   border-radius: 100px;
   cursor: pointer;
-  color: #292929 !important;
+  color: #292929;
 }
 .button_bordered {
   background: #FAFAFA;
@@ -587,6 +587,13 @@ template {
 .arrow_bordered:hover {
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
+}
+.arrow_bordered:hover:disabled {
+  background: transparent;
+}
+.arrow_bordered:disabled {
+  color: #CDCDCD;
+  border: 2px solid #CDCDCD;
 }
 
 .prev {

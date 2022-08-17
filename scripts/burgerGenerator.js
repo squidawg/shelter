@@ -19,7 +19,9 @@ export const burgerPositionSwitch = (animationEvent, aside_wrapper) => {
 
 export function burgerGenerator(elem, toggler, classLName){
     const overlay = createElement('div', 'aside_overlay');
+    overlay.id = 'aside_overlay'
     const wrapper = createElement('div', 'aside_wrapper');
+    wrapper.id = 'aside_wrapper'
     const burgerInner = createElement('div', 'aside_inner');
     const burgerLinks = createElement('ul', 'aside_list');
     let burgerLogo = LOGO.cloneNode(true);

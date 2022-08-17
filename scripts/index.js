@@ -6,16 +6,16 @@ import {HEADER} from "./burgerGenerator.js";
 
 const BTN_LEFT = document.getElementById("btn_left");
 const BTN_RIGHT = document.getElementById("btn_right");
-const CAROUSEL = document.querySelector(".carousel");
-const ITEM_LEFT = document.querySelector(".left_cards");
-const ITEM_RIGHT = document.querySelector(".right_cards");
-const ITEM_ACTIVE = document.querySelector(".active_cards");
-const HAMBURGER = document.querySelector('.hamburger');
+const CAROUSEL = document.getElementById("carousel");
+const ITEM_LEFT = document.getElementById("left_cards");
+const ITEM_RIGHT = document.getElementById("right_cards");
+const ITEM_ACTIVE = document.getElementById("active_cards");
+const HAMBURGER = document.getElementById('hamburger');
 let cardQuantity;
 let time;
 
 HAMBURGER.addEventListener('click', function (){
-    const aside_wrapper = document.querySelector('.aside_wrapper');
+    const aside_wrapper = document.getElementById('aside_wrapper');
     burgerController(HAMBURGER);
     aside_wrapper.addEventListener('animationend', function (animationEvent){
         burgerPositionSwitch(animationEvent, aside_wrapper)
@@ -29,7 +29,7 @@ async function init(){
 }
 
 window.onresize = function (){
-    const overlay = document.querySelector('.aside_overlay');
+    const overlay = document.getElementById('aside_overlay');
     clearTimeout(time);
     time = setTimeout(function (){
         carouselGenerator();
@@ -40,7 +40,7 @@ window.onresize = function (){
 }
 
 function carouselGenerator(){
-    let clientWidth = document.querySelector('.carousel').clientWidth;
+    let clientWidth = document.getElementById('carousel').clientWidth;
     const carouselItems = [ITEM_LEFT, ITEM_RIGHT, ITEM_ACTIVE];
 
     cardQuantity = clientWidth === 990 ? 3 : clientWidth === 580 ? 2 : 1;
@@ -76,9 +76,9 @@ CAROUSEL.addEventListener('animationend', (animationEvent) => {
         switchedItem = ITEM_RIGHT;
     }
 
-    document.getElementById("active_cards").innerHTML = "";
+    ITEM_ACTIVE.innerHTML = "";
     while (switchedItem.childNodes.length > 0) {
-        document.getElementById("active_cards").append(switchedItem.childNodes[0]);
+        ITEM_ACTIVE.append(switchedItem.childNodes[0]);
     }
 
     generateCardAppend(switchedItem, cardQuantity);

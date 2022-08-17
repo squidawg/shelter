@@ -4,7 +4,7 @@
   padding: 15px 45px 15px 45px;
   border-radius: 100px;
   cursor: pointer;
-  color: $color-button !important;
+  color: $color-button;
   @extend %transition;
   &_bordered {
     background: $color-light;
@@ -43,6 +43,14 @@
     &:hover {
       background: $color-primary-light;
       border: 2px solid $color-primary-light;
+      &:disabled{
+        background: transparent;
+      }
+    }
+    &:disabled{
+      color: $color-background-text;
+      border: 2px solid $color-background-text;
+
     }
   }
 }
