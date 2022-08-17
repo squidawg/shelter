@@ -44,7 +44,7 @@
 .transition-right{
   animation-name: move-right;
   animation-duration: 1s;
-  @include media-laptop{
+  @include media-tablet{
     animation-name: move-right-laptop;
   }
   @include media-mobile{

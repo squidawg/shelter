@@ -694,7 +694,7 @@ template {
   animation-name: move-right;
   animation-duration: 1s;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
   .transition-right {
     animation-name: move-right-laptop;
   }
