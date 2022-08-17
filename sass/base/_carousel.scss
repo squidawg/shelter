@@ -59,7 +59,7 @@
 
 .carousel{
   width: 990px;
-  @include media-laptop{
+  @include media-tablet{
     width: 580px;
   }
   @include media-mobile{

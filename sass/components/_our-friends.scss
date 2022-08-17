@@ -100,7 +100,7 @@
   &_wrapper{
     width: 990px;
     overflow: hidden;
-    @include media-laptop{
+    @include media-tablet{
       width: 580px;
     }
     @include media-mobile{
