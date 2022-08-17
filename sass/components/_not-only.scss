@@ -1,0 +1,93 @@
+.not-only{
+  display: flex;
+  flex-direction: row;
+  padding-top: 60px;
+  gap: 42px;
+  @include media-tablet{
+    flex-direction: column;
+    gap: 100px;
+  }
+  @include media-mobile{
+    gap: 105px;
+    align-items: center;
+  }
+}
+
+.promo{
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 322px;
+  @include media-tablet{
+    align-items: center;
+    margin-left: 0;
+    gap: 42px;
+  }
+  @include media-mobile{
+    gap: 42px;
+    height: 296px;
+  }
+
+  &_title{
+    margin: 0;
+    padding-top: 163px;
+    align-items: center;
+    width: 310px;
+    @extend %font-georgia;
+    @include font(44px, 57px);
+    color: $color-background-h2;
+    @include media-tablet{
+      padding-top: 0;
+      margin-left: -150px;
+    }
+    @include media-mobile{
+      @include font(25px, 32.5px, $letter-spacing: 0.06em);
+      margin-left: 0;
+    }
+  }
+
+  &_text{
+    margin: 0;
+    @extend %font-arial;
+    @include font(15px, 24px);
+    color: $color-background-text;
+    width: 460px;
+    @include media-mobile{
+      width: 300px;
+      text-align: center;
+    }
+  }
+
+  &_image{
+    height: 728px;
+    margin-right: 40px;
+    @include media-tablet{
+      width: 569px;
+      height: 593px;
+      margin-right: 0;
+      margin-left: 169px;
+    }
+    @include media-mobile{
+      width: 260px;
+      height: 271.77px;
+      margin-left: 50px;
+    }
+  }
+
+  &_dog {
+    @include media-tablet {
+      width: 569px;
+      height: 593px;
+    }
+    @include media-mobile{
+      width: 260px;
+      height: 271.77px;
+    }
+  }
+
+  &__button{
+    @include media-tablet{
+    }
+  }
+}

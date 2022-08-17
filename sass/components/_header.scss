@@ -1,0 +1,265 @@
+.top_layout{
+  background-image:  url("../assets/images/start-screen-gradient-background.png");
+  background-position: center;
+  background-size: cover;
+  height: 908px;
+  @include media-tablet{
+    height: 1165px;
+  }
+  @include media-mobile{
+    height: 823px;
+  }
+}
+
+.header {
+  &-inner{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include media-tablet{
+      padding-top: 30px;
+    }
+  }
+
+  &_pets {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: $color-background-h2;
+
+    &-inactive {
+      @extend .header_pets;
+      position: initial;
+    }
+  }
+}
+
+.navigation{
+  &-inner {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 35px;
+    @include media-mobile{
+      display: none;
+    }
+  }
+
+  &-link{
+    text-decoration: none;
+    @extend %font-arial;
+    @include font(15px, 24px);
+    color: $color-background-text;
+    &:hover {
+      color: $color-light;
+    }
+
+    &-active{
+      @extend .navigation-link;
+      color: $color-light;
+    }
+  }
+}
+
+.active{
+  border-bottom: 3px solid;
+  color: $color-primary;
+}
+
+.logo{
+  &-title{
+    @extend %font-georgia;
+    @include font(32px, 110%,$letter-spacing: 0.06em);
+    color: $color-primary;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  &-subtitle{
+    @extend %font-arial;
+    @include font(13px, 15px,$letter-spacing: 0.1em);
+    color: $color-background-h2;
+    margin: 0;
+    text-align: center;
+  }
+
+  &-link{
+    text-decoration: none;
+  }
+}
+
+.pets {
+  &-subtitle {
+    color: $color-button;
+  }
+
+  &-title {
+    color: $color-heading;
+    &:hover {
+      color: $color-button;
+    }
+  }
+}
+
+  %hamburger-line{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border: 1px solid;
+    color: $color-primary;
+    background-color: $color-primary;
+    width: 100%;
+
+    &-pets {
+      @extend %hamburger-line;
+      color: $color-heading__modal;
+    }
+  }
+
+  .hamburger__line {
+    @extend %hamburger-line;
+    top: calc(50% - 1px);
+    left: 0;
+
+    &-pets{
+      @extend .hamburger__line;
+      @extend %hamburger-line-pets;
+    }
+  }
+
+  .hamburger{
+    display: flex;
+    right: 53px;
+    top: 49px;
+    position: absolute;
+    width: 30px;
+    height: 22px;
+    transition-duration: 0.5s;
+    z-index: 2;
+    @include media-over__laptop{
+      display: none;
+    }
+    @include media-mobile{
+      display: flex;
+    }
+    &:before{
+      @extend %hamburger-line;
+      top: 0;
+      left: 0;
+    }
+    &:after{
+      @extend %hamburger-line;
+      bottom: 0;
+      left: 0;
+    }
+    &-pets{
+      @extend .hamburger;
+      &:before{
+        @extend %hamburger-line-pets;
+        top: 0;
+        left: 0;
+      }
+      &:after{
+        @extend %hamburger-line-pets;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+  //burger menu
+  .aside{
+    &_wrapper{
+      width: 320px;
+      height: 100%;
+      background: $color-button;
+      position: absolute;
+      right: -320px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: scroll;
+    }
+
+    &_overlay{
+      width: calc(100% - 320px);
+      height: 100%;
+      background-color: $color-background-overlay;
+      position: absolute;
+      flex-direction: row-reverse;
+      display: none;
+      z-index: 1;
+    }
+
+    &_inner{
+      margin-left: 10px;
+      margin-top: 30px;
+      display: flex;
+    }
+
+    &_list{
+      margin: auto;
+      width: 243px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 158px;
+      gap: 40px;
+      padding: 0;
+      list-style: none;
+      flex-direction: column;
+      &>li>a{
+        @extend .navigation-link;
+        font-size: 32px;
+      }
+    }
+  }
+
+.burger{
+  &_closed {
+    transform: rotate(0deg);
+  }
+  &_open {
+    transform: rotate(-90deg);
+  }
+}
+@keyframes overlay-opacityFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.opacity-fadeIn{
+  animation-name: overlay-opacityFadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes transition-open {
+  from {right: -320px
+  }
+  to {right: 0
+  }
+}
+
+@keyframes transition-close {
+  from {right: 0
+  }
+  to {right: -320px
+  }
+}
+
+.transition-open-animation{
+  animation-name: transition-open;
+  animation-duration: 0.3s;
+}
+
+.transition-close-animation{
+  animation-name: transition-close;
+  animation-duration: 0.3s;
+}

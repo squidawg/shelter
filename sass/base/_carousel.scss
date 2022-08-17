@@ -1,0 +1,68 @@
+.left_cards , .right_cards, .active_cards{
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  @include media-tablet{
+    gap: 40px;
+  }
+  @include media-mobile{
+    gap: 0;
+  }
+}
+
+// move-left behaves normal in all kind resolutions
+@keyframes move-left {
+  from {right: -990px}
+  to {left: 0}
+  @include media-laptop{
+    from {right: -580px};
+    to {left: -0px}
+
+  }
+  @include media-mobile{
+    from {right: -270px}
+    to {left: -0px}
+  }
+}
+
+// move-right only works if keyframes separated
+@keyframes move-right-laptop {
+  from {right: -580px}
+  to {left: -1160px}
+}
+
+@keyframes move-right-mobile {
+  from {right: -270px}
+  to {left: -540px}
+}
+
+@keyframes move-right {
+  from {right: -990px}
+  to {left: -1980px}
+}
+
+.transition-right{
+  animation-name: move-right;
+  animation-duration: 1s;
+  @include media-tablet{
+    animation-name: move-right-laptop;
+  }
+  @include media-mobile{
+    animation-name: move-right-mobile;
+  }
+}
+
+.transition-left{
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+
+.carousel{
+  width: 990px;
+  @include media-tablet{
+    width: 580px;
+  }
+  @include media-mobile{
+    width: 270px;
+  }
+}

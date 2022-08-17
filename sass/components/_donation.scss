@@ -1,0 +1,129 @@
+.donation{
+  padding-top: 80px;
+  padding-bottom: 100px;
+  height: 282px;
+  @include media-tablet{
+    height: 603px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media-mobile{
+    padding-top: 42px;
+    padding-bottom: 42px;
+    height: 458px;
+  }
+
+  &_layout{
+    background: $color-background-pets;
+  }
+
+  &_inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    @include media-tablet{
+      flex-direction: column-reverse;
+      gap: 60px;
+    }
+    @include media-mobile{
+      gap: 0;
+      justify-content: space-between;
+    }
+  }
+
+  &_card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 9px;
+    background: $color-primary;
+    width: 320px;
+    @include media-mobile{
+      width: 251px;
+      height: 23px;
+    }
+  }
+
+  &_link{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    text-decoration: none;
+    @include media-mobile{
+      align-items: center;
+    }
+  }
+
+  &_subtitle{
+    @extend %font-georgia;
+    @include font(15px, 16.5px, $letter-spacing: 0.06em);
+    color: $color-heading;
+    margin: 0;
+    @include media-mobile{
+      text-align: center;
+      width: 273px;
+      letter-spacing: 0;
+    }
+  }
+
+  &_text{
+    @extend %font-arial;
+    @include font(12px, 18px, $style: italic);
+    color: $color-background-text-card;
+    display: flex;
+    align-items: center;
+    width: 380px;
+    margin: 0;
+    @include media-mobile{
+      width: 280px;
+      text-align: justify;
+    }
+  }
+
+  &_promo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include media-tablet{
+      margin-left: 62.5px;
+    }
+    @include media-mobile{
+      margin-left: 0;
+      width: 300px;
+      align-items: center;
+      gap: 23px;
+    }
+  }
+
+  &_image{
+    padding-top: 11px;
+    padding-bottom: 10px;
+    @include media-tablet{
+      padding: 0;
+    }
+    @include media-mobile{
+      margin-left: 20px;
+    }
+  }
+
+  &_dog{
+    @include media-mobile{
+      width: 260px;
+      height: 135.2px;
+    }
+  }
+}
+
+.card_number{
+  @extend %font-georgia;
+  @include font(20px, 23px, $letter-spacing: 0.06em);
+  color: $color-heading;
+  margin: 0;
+  @include media-mobile{
+    @include font(15px, 16.5px, $letter-spacing: 0.06em);
+    width: 220px;
+  }
+}
